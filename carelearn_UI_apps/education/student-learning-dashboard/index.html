@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Student Learning Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../dashboard-polish.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="side">
+        <div class="brand">
+          <span class="brand-mark">L</span><span>Learnly</span>
+        </div>
+        <div class="nav-label">Learning</div>
+        <a class="active"
+          ><span class="nav-icon">⌂</span><span>Overview</span></a
+        ><a><span class="nav-icon">▣</span><span>My Courses</span></a
+        ><a><span class="nav-icon">✓</span><span>Assignments</span></a
+        ><a><span class="nav-icon">★</span><span>Grades</span></a
+        ><a><span class="nav-icon">🏆</span><span>Certificates</span></a>
+        <div class="nav-label">Account</div>
+        <a><span class="nav-icon">⚙</span><span>Settings</span></a
+        ><a href="../../index.html"
+          ><span class="nav-icon">←</span><span>All Apps</span></a
+        >
+      </aside>
+      <main class="main">
+        <header class="top">
+          <div>
+            <p class="eyebrow">Friday, October 2, 2026 · Learning center</p>
+            <h1>Welcome back, Akshaya 👋</h1>
+          </div>
+          <div class="profile">
+            <div class="avatar">AN</div>
+            <b>Akshaya</b>
+          </div>
+        </header>
+        <section class="hero-card" style="margin-bottom: 20px">
+          <div class="row">
+            <div>
+              <span class="pill" style="background: #ffffff22; color: #fff"
+                >7 DAY STREAK 🔥</span
+              >
+              <h2>Keep your learning momentum</h2>
+              <p>
+                You're 82% through Web Development. Complete one lesson today to
+                keep your streak alive.
+              </p>
+              <button
+                class="btn"
+                style="background: #fff; color: #4338ca"
+                onclick="notify('Opening Web Development')"
+              >
+                Continue Learning
+              </button>
+            </div>
+            <div style="font-size: 48px">🚀</div>
+          </div>
+        </section>
+        <section class="grid stats">
+          <div class="stat">
+            <small>Enrolled Courses</small><strong>6</strong
+            ><span class="trend good">2 in progress</span>
+          </div>
+          <div class="stat">
+            <small>Learning Hours</small><strong>42h</strong
+            ><span class="trend good">+6h this week</span>
+          </div>
+          <div class="stat">
+            <small>Assignments</small><strong>8</strong
+            ><span class="trend danger">3 due soon</span>
+          </div>
+          <div class="stat">
+            <small>Average Score</small><strong>88%</strong
+            ><span class="trend good">Excellent</span>
+          </div>
+        </section>
+        <section class="grid two">
+          <div class="panel">
+            <div class="row">
+              <div>
+                <h2>Continue Learning</h2>
+                <p class="muted">Pick up where you left off</p>
+              </div>
+              <button class="btn light" onclick="notify('My courses opened')">
+                My Courses
+              </button>
+            </div>
+            <div class="item">
+              <div class="row">
+                <div>
+                  <h3>Web Development</h3>
+                  <p class="muted">HTML, CSS & JavaScript</p>
+                </div>
+                <strong>82%</strong>
+              </div>
+              <div class="progress"><i style="width: 82%"></i></div>
+              <div class="row" style="margin-top: 10px">
+                <small class="muted">Lesson 24 of 30</small
+                ><button
+                  class="btn"
+                  onclick="notify('Opening Web Development')"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row">
+                <div>
+                  <h3>Java Programming</h3>
+                  <p class="muted">OOP, Collections & DSA</p>
+                </div>
+                <strong>64%</strong>
+              </div>
+              <div class="progress"><i style="width: 64%"></i></div>
+              <div class="row" style="margin-top: 10px">
+                <small class="muted">Lesson 16 of 25</small
+                ><button
+                  class="btn"
+                  onclick="notify('Opening Java Programming')"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="row">
+              <div>
+                <h2>Upcoming Assignments</h2>
+                <p class="muted">Stay ahead of your deadlines</p>
+              </div>
+              <span class="danger">3 pending</span>
+            </div>
+            <div class="list">
+              <div class="item row">
+                <div>
+                  <b>Java DSA Quiz</b>
+                  <p class="muted">Tomorrow · 10 marks</p>
+                </div>
+                <span class="danger">Due soon</span>
+              </div>
+              <div class="item row">
+                <div>
+                  <b>Web Practical</b>
+                  <p class="muted">Oct 06 · 20 marks</p>
+                </div>
+                <span>4 days</span>
+              </div>
+              <div class="item row">
+                <div>
+                  <b>Database Report</b>
+                  <p class="muted">Oct 10 · 25 marks</p>
+                </div>
+                <span>8 days</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="grid two" style="margin-top: 20px">
+          <div class="panel">
+            <div class="row">
+              <h2>Recent Activity</h2>
+              <button
+                class="btn light"
+                onclick="notify('Activity history opened')"
+              >
+                View all
+              </button>
+            </div>
+            <div class="list">
+              <div class="item">
+                ✅ Completed <b>CSS Flexbox</b>
+                <p class="muted">Today, 4:20 PM</p>
+              </div>
+              <div class="item">
+                🏆 Earned <b>Java Basics Badge</b>
+                <p class="muted">Yesterday</p>
+              </div>
+              <div class="item">
+                📝 Submitted <b>Python Lab 5</b>
+                <p class="muted">Sep 30</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="row">
+              <h2>Achievements</h2>
+              <button class="btn light" onclick="notify('Achievements opened')">
+                View all
+              </button>
+            </div>
+            <div class="feature-grid">
+              <div class="feature">
+                <strong style="font-size: 25px">🏆</strong>
+                <p><b>Top Learner</b></p>
+                <small class="muted">Top 10% this month</small>
+              </div>
+              <div class="feature">
+                <strong style="font-size: 25px">🔥</strong>
+                <p><b>7 Day Streak</b></p>
+                <small class="muted">Keep going</small>
+              </div>
+              <div class="feature">
+                <strong style="font-size: 25px">⭐</strong>
+                <p><b>90% Club</b></p>
+                <small class="muted">3 courses</small>
+              </div>
+            </div>
+          </div>
+        </section>
+        <p class="footer-note">
+          Learnly demo interface · Sample student data for UI demonstration.
+        </p>
+      </main>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
