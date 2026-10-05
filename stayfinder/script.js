@@ -1,0 +1,19 @@
+const hotels=[
+{name:"Hotel Sakura",price:7200,rating:4.8,distance:"0.8 km",amenities:["WiFi","Breakfast"],image:"https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=900&q=80"},
+{name:"Kyoto Garden Hotel",price:6400,rating:4.7,distance:"1.2 km",amenities:["WiFi","Pool"],image:"https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80"},
+{name:"Gion House",price:5200,rating:4.6,distance:"0.5 km",amenities:["WiFi"],image:"https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=80"},
+{name:"Riverside Kyoto",price:9800,rating:4.9,distance:"2.1 km",amenities:["WiFi","Breakfast","Pool"],image:"https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=900&q=80"},
+{name:"Miyako Stay",price:7800,rating:4.8,distance:"1.5 km",amenities:["WiFi","Breakfast"],image:"https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80"},
+{name:"Hana Boutique",price:11200,rating:4.9,distance:"1.0 km",amenities:["WiFi","Breakfast","Pool"],image:"https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=900&q=80"}];
+const hotelsEl=document.getElementById("hotels");
+function render(){
+ const max=+document.getElementById("price").value, minRating=+document.getElementById("rating").value, checks=[...document.querySelectorAll('.check input:checked')].map(x=>x.value), sort=document.getElementById("sort").value;
+ let list=hotels.filter(h=>h.price<=max&&h.rating>=minRating&&checks.every(x=>h.amenities.includes(x)));
+ if(sort==="price")list.sort((a,b)=>a.price-b.price);if(sort==="rating")list.sort((a,b)=>b.rating-a.rating);
+ document.getElementById("count").textContent=`${list.length} stays`;document.getElementById("priceLabel").textContent=`₹${max.toLocaleString()}`;
+ hotelsEl.innerHTML=list.map(h=>`<article class="hotel card"><img src="${h.image}" alt="${h.name}"><div class="hotel-info"><div class="hotel-title"><div><h3>${h.name}</h3><p>📍 ${h.distance} from city center</p></div><strong>★ ${h.rating}</strong></div><div class="amenities">${h.amenities.map(a=>`<span>✓ ${a}</span>`).join("")}</div><div class="hotel-foot"><div><b>₹${h.price.toLocaleString()}</b><small>/ night</small></div><button class="primary" onclick="view('${h.name}')">View stay</button></div></div></article>`).join("")||"<div class='empty'>No stays match your filters.</div>"
+}
+function view(name){const h=hotels.find(x=>x.name===name);document.getElementById("modalContent").innerHTML=`<span class="eyebrow">HOTEL DETAILS</span><h2>${h.name}</h2><p>★ ${h.rating} · ${h.distance} from city center</p><div class="modal-price">₹${h.price.toLocaleString()} <small>/ night</small></div><p>Deluxe room with ${h.amenities.join(", ")}. Free cancellation available on the demo booking.</p><button class="primary full" onclick="alert('Demo reservation confirmed!')">Reserve room</button>`;document.getElementById("modal").classList.remove("hidden")}
+document.getElementById("close").onclick=()=>document.getElementById("modal").classList.add("hidden");
+document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")e.currentTarget.classList.add("hidden")};
+document.getElementById("price").oninput=render;document.getElementById("rating").onchange=render;document.getElementById("sort").onchange=render;document.querySelectorAll(".check input").forEach(x=>x.onchange=render);document.getElementById("search").onclick=()=>{alert(`Searching stays in ${document.getElementById("location").value} for ${document.getElementById("guests").value}.`);render()};document.getElementById("clear").onclick=()=>{document.getElementById("price").value=12000;document.getElementById("rating").value=0;document.querySelectorAll(".check input").forEach(x=>x.checked=false);render()};render();

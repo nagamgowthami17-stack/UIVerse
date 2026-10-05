@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanderly — Destination Explorer</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><nav><a class="logo" href="#">Wanderly</a><div class="nav-links"><a class="active" href="#">Explore</a><a href="../tripcraft/index.html">Trips</a><a href="../stayfinder/index.html">Stays</a><a href="../travelmate/index.html">TravelMate</a></div><button class="icon-btn" id="favoritesBtn">♡ <span id="favCount">0</span></button></nav></header>
+<main>
+<section class="hero"><div><span class="eyebrow">TRAVEL · DISCOVER · EXPERIENCE</span><h1>Where will you go <span>next?</span></h1><p>Find inspiring destinations, hidden gems and unforgettable experiences.</p>
+<div class="search"><span>⌕</span><input id="searchInput" placeholder="Search destinations, countries or experiences..."><button id="searchBtn">Explore</button></div></div></section>
+<section class="section"><div class="section-head"><div><span class="eyebrow">EXPLORE</span><h2>Trending destinations</h2></div><div class="chips" id="chips"><button class="chip active" data-category="All">All</button><button class="chip" data-category="Beach">Beach</button><button class="chip" data-category="Culture">Culture</button><button class="chip" data-category="Nature">Nature</button><button class="chip" data-category="Adventure">Adventure</button></div></div><div class="grid" id="destinationGrid"></div></section>
+<section class="section recommendation"><div><span class="eyebrow">PERSONALIZED</span><h2>Made for curious travelers ✨</h2><p id="recommendationText">Explore destinations and save your favorites to get better suggestions.</p></div><button class="secondary" onclick="location.href='../tripcraft/index.html'">Plan a trip →</button></section>
+</main>
+<footer>Wanderly Travel UI Collection · Demo data for educational use</footer>
+<script src="script.js"></script></body></html>
