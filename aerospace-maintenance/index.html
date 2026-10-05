@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AeroMaintain | Aircraft Maintenance</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">AM</div>
+
+            <div>
+                <h2>AeroMaintain</h2>
+                <span>AIRCRAFT OPERATIONS</span>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="#dashboard" class="nav-link active">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="#aircraft" class="nav-link">
+                <span>✈</span>
+                Aircraft
+            </a>
+
+            <a href="#maintenance" class="nav-link">
+                <span>⚙</span>
+                Maintenance
+            </a>
+
+            <a href="#tasks" class="nav-link">
+                <span>✓</span>
+                Work Orders
+            </a>
+
+            <a href="#technicians" class="nav-link">
+                <span>♙</span>
+                Technicians
+            </a>
+
+            <a href="#reports" class="nav-link">
+                <span>▤</span>
+                Reports
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="fleet-status">
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>Fleet Status</strong>
+                    <small>Operational</small>
+                </div>
+            </div>
+
+            <div class="operator">
+                <div class="operator-avatar">
+                    AK
+                </div>
+
+                <div>
+                    <strong>Alex Kumar</strong>
+                    <small>Maintenance Manager</small>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <div>
+                <p class="eyebrow">
+                    AEROSPACE MAINTENANCE
+                </p>
+
+                <h1>
+                    Aircraft Maintenance Dashboard
+                </h1>
+            </div>
+
+            <div class="topbar-actions">
+
+                <div class="date-display" id="currentDate">
+                    Loading date...
+                </div>
+
+                <button
+                    class="icon-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+                    🔔
+                </button>
+
+                <button
+                    class="profile-button"
+                    id="profileButton"
+                >
+                    AK
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- Dashboard -->
+        <section
+            id="dashboard"
+            class="section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">
+                        FLEET OVERVIEW
+                    </p>
+
+                    <h2>
+                        Maintenance Summary
+                    </h2>
+                </div>
+
+                <span class="last-updated">
+                    ● Updated just now
+                </span>
+
+            </div>
+
+
+            <div class="summary-grid">
+
+                <article class="summary-card">
+
+                    <div class="summary-icon blue">
+                        ✈
+                    </div>
+
+                    <div>
+                        <span>Total Aircraft</span>
+                        <strong>32</strong>
+                        <small>Fleet registered</small>
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <div class="summary-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span>Operational</span>
+                        <strong>26</strong>
+                        <small class="positive">
+                            81.3% of fleet
+                        </small>
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <div class="summary-icon orange">
+                        ⚙
+                    </div>
+
+                    <div>
+                        <span>In Maintenance</span>
+                        <strong>04</strong>
+                        <small>Currently serviced</small>
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <div class="summary-icon red">
+                        !
+                    </div>
+
+                    <div>
+                        <span>Attention Required</span>
+                        <strong>02</strong>
+                        <small class="negative">
+                            Requires inspection
+                        </small>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Aircraft -->
+        <section
+            id="aircraft"
+            class="section"
+        >
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <p class="section-label">
+                            FLEET MANAGEMENT
+                        </p>
+
+                        <h2>
+                            Aircraft Status
+                        </h2>
+                    </div>
+
+                    <button
+                        class="primary-button"
+                        id="addAircraft"
+                    >
+                        + Add Aircraft
+                    </button>
+
+                </div>
+
+
+                <!-- Search and Filters -->
+                <div class="filter-bar">
+
+                    <div class="search-box">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="text"
+                            id="aircraftSearch"
+                            placeholder="Search aircraft, model or location..."
+                        >
+
+                    </div>
+
+
+                    <select id="typeFilter">
+
+                        <option value="all">
+                            All Types
+                        </option>
+
+                        <option value="fighter">
+                            Fighter
+                        </option>
+
+                        <option value="transport">
+                            Transport
+                        </option>
+
+                        <option value="surveillance">
+                            Surveillance
+                        </option>
+
+                    </select>
+
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="operational">
+                            Operational
+                        </option>
+
+                        <option value="maintenance">
+                            Maintenance
+                        </option>
+
+                        <option value="inspection">
+                            Inspection
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Aircraft Table -->
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Aircraft</th>
+                                <th>Model</th>
+                                <th>Type</th>
+                                <th>Location</th>
+                                <th>Last Service</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="aircraftTableBody">
+
+                            <tr
+                                data-type="fighter"
+                                data-status="operational"
+                            >
+
+                                <td>
+                                    <strong>Falcon-01</strong>
+                                    <small>AF-001</small>
+                                </td>
+
+                                <td>FX-90</td>
+
+                                <td>Fighter</td>
+
+                                <td>Chennai Air Base</td>
+
+                                <td>18 Sep 2026</td>
+
+                                <td>
+                                    <span class="status operational">
+                                        Operational
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-type="transport"
+                                data-status="maintenance"
+                            >
+
+                                <td>
+                                    <strong>Atlas-07</strong>
+                                    <small>TR-007</small>
+                                </td>
+
+                                <td>AT-220</td>
+
+                                <td>Transport</td>
+
+                                <td>Bengaluru Hangar</td>
+
+                                <td>26 Sep 2026</td>
+
+                                <td>
+                                    <span class="status maintenance">
+                                        Maintenance
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-type="surveillance"
+                                data-status="operational"
+                            >
+
+                                <td>
+                                    <strong>EagleEye-03</strong>
+                                    <small>SV-003</small>
+                                </td>
+
+                                <td>EO-18</td>
+
+                                <td>Surveillance</td>
+
+                                <td>Hyderabad Base</td>
+
+                                <td>22 Sep 2026</td>
+
+                                <td>
+                                    <span class="status operational">
+                                        Operational
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-type="fighter"
+                                data-status="inspection"
+                            >
+
+                                <td>
+                                    <strong>Falcon-08</strong>
+                                    <small>AF-008</small>
+                                </td>
+
+                                <td>FX-90</td>
+
+                                <td>Fighter</td>
+
+                                <td>Coimbatore Base</td>
+
+                                <td>11 Sep 2026</td>
+
+                                <td>
+                                    <span class="status inspection">
+                                        Inspection
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-type="transport"
+                                data-status="operational"
+                            >
+
+                                <td>
+                                    <strong>Atlas-12</strong>
+                                    <small>TR-012</small>
+                                </td>
+
+                                <td>AT-220</td>
+
+                                <td>Transport</td>
+
+                                <td>Delhi Air Base</td>
+
+                                <td>29 Sep 2026</td>
+
+                                <td>
+                                    <span class="status operational">
+                                        Operational
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="table-footer">
+
+                    <span id="recordCount">
+                        Showing 5 of 32 aircraft
+                    </span>
+
+                    <div class="pagination">
+
+                        <button class="page-button active">
+                            1
+                        </button>
+
+                        <button class="page-button">
+                            2
+                        </button>
+
+                        <button class="page-button">
+                            3
+                        </button>
+
+                        <button class="page-button">
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Maintenance -->
+        <section
+            id="maintenance"
+            class="section"
+        >
+
+            <div class="two-column">
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <p class="section-label">
+                                SCHEDULE
+                            </p>
+
+                            <h2>
+                                Upcoming Maintenance
+                            </h2>
+                        </div>
+
+                        <button
+                            class="secondary-button"
+                            id="scheduleButton"
+                        >
+                            Full Schedule
+                        </button>
+
+                    </div>
+
+
+                    <div class="maintenance-list">
+
+                        <div class="maintenance-item">
+
+                            <div class="date-box">
+                                <strong>08</strong>
+                                <span>OCT</span>
+                            </div>
+
+                            <div class="maintenance-details">
+
+                                <strong>
+                                    Falcon-08 Inspection
+                                </strong>
+
+                                <span>
+                                    Routine airframe inspection
+                                </span>
+
+                                <small>
+                                    Hangar 04 • 09:30
+                                </small>
+
+                            </div>
+
+                            <span class="priority medium">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="maintenance-item">
+
+                            <div class="date-box">
+                                <strong>11</strong>
+                                <span>OCT</span>
+                            </div>
+
+                            <div class="maintenance-details">
+
+                                <strong>
+                                    Atlas-07 Engine Service
+                                </strong>
+
+                                <span>
+                                    Engine performance inspection
+                                </span>
+
+                                <small>
+                                    Hangar 02 • 11:00
+                                </small>
+
+                            </div>
+
+                            <span class="priority high">
+                                High
+                            </span>
+
+                        </div>
+
+
+                        <div class="maintenance-item">
+
+                            <div class="date-box">
+                                <strong>15</strong>
+                                <span>OCT</span>
+                            </div>
+
+                            <div class="maintenance-details">
+
+                                <strong>
+                                    EagleEye-03 Avionics Check
+                                </strong>
+
+                                <span>
+                                    Navigation system diagnostics
+                                </span>
+
+                                <small>
+                                    Hangar 07 • 14:00
+                                </small>
+
+                            </div>
+
+                            <span class="priority low">
+                                Low
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Readiness -->
+                <div class="panel readiness-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <p class="section-label">
+                                FLEET HEALTH
+                            </p>
+
+                            <h2>
+                                Readiness
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="readiness-score">
+
+                        <div class="readiness-circle">
+                            <strong>92%</strong>
+                            <span>Ready</span>
+                        </div>
+
+                        <div>
+                            <p>
+                                Fleet readiness remains above
+                                the operational target.
+                            </p>
+
+                            <span class="target">
+                                Target: 90%
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="readiness-bars">
+
+                        <div class="bar-item">
+
+                            <div>
+                                <span>Fighter Fleet</span>
+                                <strong>95%</strong>
+                            </div>
+
+                            <div class="bar-track">
+                                <div
+                                    class="bar-fill"
+                                    style="width: 95%;"
+                                ></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="bar-item">
+
+                            <div>
+                                <span>Transport Fleet</span>
+                                <strong>88%</strong>
+                            </div>
+
+                            <div class="bar-track">
+                                <div
+                                    class="bar-fill orange"
+                                    style="width: 88%;"
+                                ></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="bar-item">
+
+                            <div>
+                                <span>Surveillance Fleet</span>
+                                <strong>94%</strong>
+                            </div>
+
+                            <div class="bar-track">
+                                <div
+                                    class="bar-fill"
+                                    style="width: 94%;"
+                                ></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Work Orders -->
+        <section
+            id="tasks"
+            class="section"
+        >
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <p class="section-label">
+                            MAINTENANCE OPERATIONS
+                        </p>
+
+                        <h2>
+                            Active Work Orders
+                        </h2>
+                    </div>
+
+                    <span class="work-order-count">
+                        8 Active
+                    </span>
+
+                </div>
+
+
+                <div class="work-order-grid">
+
+                    <div class="work-card">
+
+                        <div class="work-card-top">
+                            <span>WO-2041</span>
+                            <span class="priority high">
+                                High
+                            </span>
+                        </div>
+
+                        <h3>
+                            Engine inspection
+                        </h3>
+
+                        <p>
+                            Atlas-07
+                        </p>
+
+                        <div class="work-progress">
+                            <div>
+                                <span>Progress</span>
+                                <strong>68%</strong>
+                            </div>
+
+                            <div class="bar-track">
+                                <div
+                                    class="bar-fill orange"
+                                    style="width: 68%;"
+                                ></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="work-card">
+
+                        <div class="work-card-top">
+                            <span>WO-2045</span>
+                            <span class="priority medium">
+                                Medium
+                            </span>
+                        </div>
+
+                        <h3>
+                            Avionics diagnostics
+                        </h3>
+
+                        <p>
+                            EagleEye-03
+                        </p>
+
+                        <div class="work-progress">
+                            <div>
+                                <span>Progress</span>
+                                <strong>42%</strong>
+                            </div>
+
+                            <div class="bar-track">
+                                <div
+                                    class="bar-fill"
+                                    style="width: 42%;"
+                                ></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="work-card">
+
+                        <div class="work-card-top">
+                            <span>WO-2052</span>
+                            <span class="priority low">
+                                Low
+                            </span>
+                        </div>
+
+                        <h3>
+                            Cabin system check
+                        </h3>
+
+                        <p>
+                            Atlas-12
+                        </p>
+
+                        <div class="work-progress">
+                            <div>
+                                <span>Progress</span>
+                                <strong>81%</strong>
+                            </div>
+
+                            <div class="bar-track">
+                                <div
+                                    class="bar-fill"
+                                    style="width: 81%;"
+                                ></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Technicians -->
+        <section
+            id="technicians"
+            class="section"
+        >
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <p class="section-label">
+                            MAINTENANCE TEAM
+                        </p>
+
+                        <h2>
+                            Technician Availability
+                        </h2>
+                    </div>
+
+                    <span class="technician-status">
+                        18 Available
+                    </span>
+
+                </div>
+
+
+                <div class="technician-grid">
+
+                    <div class="technician">
+
+                        <div class="technician-avatar">
+                            RK
+                        </div>
+
+                        <div>
+                            <strong>
+                                Rahul Kumar
+                            </strong>
+
+                            <span>
+                                Engine Specialist
+                            </span>
+
+                            <small>
+                                Available
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="technician">
+
+                        <div class="technician-avatar">
+                            PS
+                        </div>
+
+                        <div>
+                            <strong>
+                                Priya Shah
+                            </strong>
+
+                            <span>
+                                Avionics Engineer
+                            </span>
+
+                            <small>
+                                On Task
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="technician">
+
+                        <div class="technician-avatar">
+                            VM
+                        </div>
+
+                        <div>
+                            <strong>
+                                Vikram Menon
+                            </strong>
+
+                            <span>
+                                Airframe Specialist
+                            </span>
+
+                            <small>
+                                Available
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="technician">
+
+                        <div class="technician-avatar">
+                            AS
+                        </div>
+
+                        <div>
+                            <strong>
+                                Ananya Singh
+                            </strong>
+
+                            <span>
+                                Systems Engineer
+                            </span>
+
+                            <small>
+                                On Task
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Reports -->
+        <section
+            id="reports"
+            class="section"
+        >
+
+            <div class="panel report-panel">
+
+                <div>
+
+                    <p class="section-label">
+                        MAINTENANCE ANALYTICS
+                    </p>
+
+                    <h2>
+                        Reports & Maintenance Records
+                    </h2>
+
+                    <p>
+                        Review aircraft service history,
+                        maintenance performance, work-order
+                        completion, and fleet readiness reports.
+                    </p>
+
+                </div>
+
+                <button
+                    class="secondary-button"
+                    id="reportButton"
+                >
+                    View Reports
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <span>
+                AeroMaintain Aircraft Operations
+            </span>
+
+            <span>
+                Simulation Environment • All data fictional
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- Toast -->
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+    ></div>
+
+</body>
+</html>

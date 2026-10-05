@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="EquipTrack equipment management dashboard"
+    >
+
+    <title>EquipTrack | Equipment Management</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         APPLICATION
+    ========================================== -->
+
+    <div class="app">
+
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- BRAND -->
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    EM
+                </div>
+
+                <div class="brand-text">
+
+                    <h2>
+                        EquipTrack
+                    </h2>
+
+                    <span>
+                        Asset Management
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MANAGEMENT NAVIGATION -->
+
+            <div class="nav-section">
+
+                <div class="nav-title">
+                    MANAGEMENT
+                </div>
+
+
+                <a
+                    href="#dashboard"
+                    class="nav-link active"
+                >
+
+                    <span class="nav-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#equipment"
+                    class="nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ▤
+                    </span>
+
+                    <span>
+                        Equipment
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#maintenance"
+                    class="nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ⚙
+                    </span>
+
+                    <span>
+                        Maintenance
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#readiness"
+                    class="nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Readiness
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- ANALYTICS NAVIGATION -->
+
+            <div class="nav-section">
+
+                <div class="nav-title">
+                    ANALYTICS
+                </div>
+
+
+                <a
+                    href="#reports"
+                    class="nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ◷
+                    </span>
+
+                    <span>
+                        Reports
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#settings"
+                    class="nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ⚙
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- ADMIN PROFILE -->
+
+            <div class="admin-card">
+
+                <div class="admin-avatar">
+                    SI
+                </div>
+
+                <div class="admin-info">
+
+                    <strong>
+                        Operations Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+
+        <main
+            class="main-content"
+            id="dashboard"
+        >
+
+
+            <!-- =====================================
+                 PAGE HEADER
+            ====================================== -->
+
+            <header class="page-header">
+
+                <div class="page-heading">
+
+                    <div class="eyebrow">
+                        EQUIPMENT MANAGEMENT
+                    </div>
+
+                    <h1>
+                        Equipment Inventory
+                    </h1>
+
+                    <p class="page-subtitle">
+                        Monitor equipment availability, condition and maintenance status.
+                    </p>
+
+                </div>
+
+
+                <div class="header-actions">
+
+
+                    <!-- NOTIFICATION -->
+
+                    <button
+                        type="button"
+                        class="notification-button"
+                        id="notificationButton"
+                        aria-label="Notifications"
+                    >
+
+                        ♢
+
+                        <span class="notification-badge">
+                            3
+                        </span>
+
+                    </button>
+
+
+                    <!-- PROFILE -->
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                    >
+
+                        <div class="profile-avatar">
+                            SI
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong>
+                                Shalini
+                            </strong>
+
+                            <span>
+                                Administrator
+                            </span>
+
+                        </div>
+
+                        <span class="profile-arrow">
+                            ˅
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =====================================
+                 EQUIPMENT OVERVIEW
+            ====================================== -->
+
+            <section id="equipment">
+
+
+                <!-- SECTION HEADING -->
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            ASSET SUMMARY
+                        </div>
+
+                        <h2>
+                            Equipment Overview
+                        </h2>
+
+                    </div>
+
+
+                    <div class="sync-status">
+
+                        <span></span>
+
+                        Data synchronized
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SUMMARY CARDS -->
+
+                <div class="summary-grid">
+
+
+                    <!-- CARD 1 -->
+
+                    <article class="summary-card">
+
+                        <div class="summary-top">
+
+                            <div class="summary-icon blue">
+                                ▣
+                            </div>
+
+                            <div>
+
+                                <span class="summary-label">
+                                    Total Equipment
+                                </span>
+
+                                <h3>
+                                    1,248
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <span class="summary-change blue">
+                            +42 this quarter
+                        </span>
+
+                    </article>
+
+
+
+                    <!-- CARD 2 -->
+
+                    <article class="summary-card">
+
+                        <div class="summary-top">
+
+                            <div class="summary-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <span class="summary-label">
+                                    Operational
+                                </span>
+
+                                <h3>
+                                    1,092
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <span class="summary-change green">
+                            87.5% of inventory
+                        </span>
+
+                    </article>
+
+
+
+                    <!-- CARD 3 -->
+
+                    <article class="summary-card">
+
+                        <div class="summary-top">
+
+                            <div class="summary-icon orange">
+                                ⚙
+                            </div>
+
+                            <div>
+
+                                <span class="summary-label">
+                                    Under Maintenance
+                                </span>
+
+                                <h3>
+                                    86
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <span class="summary-change orange">
+                            12 due this week
+                        </span>
+
+                    </article>
+
+
+
+                    <!-- CARD 4 -->
+
+                    <article class="summary-card">
+
+                        <div class="summary-top">
+
+                            <div class="summary-icon red">
+                                !
+                            </div>
+
+                            <div>
+
+                                <span class="summary-label">
+                                    Needs Attention
+                                </span>
+
+                                <h3>
+                                    70
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <span class="summary-change red">
+                            Requires review
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 EQUIPMENT INVENTORY
+            ====================================== -->
+
+            <section
+                class="panel"
+                id="inventory"
+            >
+
+
+                <!-- PANEL HEADER -->
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            INVENTORY
+                        </div>
+
+                        <h2>
+                            Equipment List
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="add-equipment"
+                        id="addEquipment"
+                    >
+
+                        <span>
+                            +
+                        </span>
+
+                        Add Equipment
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- FILTER BAR -->
+
+                <div class="filter-bar">
+
+
+                    <!-- SEARCH -->
+
+                    <div class="search-box">
+
+                        <span class="search-icon">
+                            ⌕
+                        </span>
+
+                        <input
+                            type="search"
+                            id="equipmentSearch"
+                            class="search-input"
+                            placeholder="Search equipment..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+
+                    <!-- CATEGORY -->
+
+                    <select
+                        id="categoryFilter"
+                        class="filter-select"
+                    >
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                        <option value="vehicles">
+                            Vehicles
+                        </option>
+
+                        <option value="communication">
+                            Communication
+                        </option>
+
+                        <option value="support">
+                            Equipment
+                        </option>
+
+                        <option value="system">
+                            Support
+                        </option>
+
+                    </select>
+
+
+
+                    <!-- STATUS -->
+
+                    <select
+                        id="statusFilter"
+                        class="filter-select"
+                    >
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="operational">
+                            Operational
+                        </option>
+
+                        <option value="maintenance">
+                            Maintenance
+                        </option>
+
+                        <option value="attention">
+                            Attention
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- EQUIPMENT TABLE -->
+
+                <div class="table-wrapper">
+
+                    <table class="equipment-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Equipment
+                                </th>
+
+                                <th>
+                                    Category
+                                </th>
+
+                                <th>
+                                    Location
+                                </th>
+
+                                <th>
+                                    Last Inspection
+                                </th>
+
+                                <th>
+                                    Condition
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="equipmentTableBody">
+
+
+                            <!-- ROW 1 -->
+
+                            <tr
+                                data-category="vehicles"
+                                data-status="operational"
+                            >
+
+                                <td>
+
+                                    <div class="equipment-name">
+
+                                        <div class="equipment-icon vehicle">
+                                            V
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Transport Unit A-17
+                                            </strong>
+
+                                            <span>
+                                                EQ-1047
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    Vehicles
+                                </td>
+
+
+                                <td class="location">
+                                    North Facility
+                                </td>
+
+
+                                <td>
+                                    02 Oct 2026
+                                </td>
+
+
+                                <td>
+                                    <strong>
+                                        92%
+                                    </strong>
+                                </td>
+
+
+                                <td>
+
+                                    <span class="status operational">
+
+                                        <span class="status-dot"></span>
+
+                                        Operational
+
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- ROW 2 -->
+
+                            <tr
+                                data-category="communication"
+                                data-status="operational"
+                            >
+
+                                <td>
+
+                                    <div class="equipment-name">
+
+                                        <div class="equipment-icon communication">
+                                            C
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Communication Hub C-08
+                                            </strong>
+
+                                            <span>
+                                                EQ-2214
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    Communication
+                                </td>
+
+
+                                <td class="location">
+                                    Central Facility
+                                </td>
+
+
+                                <td>
+                                    30 Sep 2026
+                                </td>
+
+
+                                <td>
+                                    <strong>
+                                        96%
+                                    </strong>
+                                </td>
+
+
+                                <td>
+
+                                    <span class="status operational">
+
+                                        <span class="status-dot"></span>
+
+                                        Operational
+
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- ROW 3 -->
+
+                            <tr
+                                data-category="support"
+                                data-status="maintenance"
+                            >
+
+                                <td>
+
+                                    <div class="equipment-name">
+
+                                        <div class="equipment-icon support">
+                                            E
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Support Module S-21
+                                            </strong>
+
+                                            <span>
+                                                EQ-3182
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    Equipment
+                                </td>
+
+
+                                <td class="location">
+                                    West Facility
+                                </td>
+
+
+                                <td>
+                                    27 Sep 2026
+                                </td>
+
+
+                                <td>
+                                    <strong>
+                                        71%
+                                    </strong>
+                                </td>
+
+
+                                <td>
+
+                                    <span class="status maintenance">
+
+                                        <span class="status-dot"></span>
+
+                                        Maintenance
+
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- ROW 4 -->
+
+                            <tr
+                                data-category="system"
+                                data-status="attention"
+                            >
+
+                                <td>
+
+                                    <div class="equipment-name">
+
+                                        <div class="equipment-icon system">
+                                            S
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Support System F-12
+                                            </strong>
+
+                                            <span>
+                                                EQ-4065
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    Support
+                                </td>
+
+
+                                <td class="location">
+                                    South Facility
+                                </td>
+
+
+                                <td>
+                                    24 Sep 2026
+                                </td>
+
+
+                                <td>
+                                    <strong>
+                                        48%
+                                    </strong>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="status attention">
+
+                                        <span class="status-dot"></span>
+
+                                        Attention
+
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- ROW 5 -->
+
+                            <tr
+                                data-category="vehicles"
+                                data-status="operational"
+                            >
+
+                                <td>
+
+                                    <div class="equipment-name">
+
+                                        <div class="equipment-icon vehicle">
+                                            V
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Transport Unit B-04
+                                            </strong>
+
+                                            <span>
+                                                EQ-1128
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    Vehicles
+                                </td>
+
+
+                                <td class="location">
+                                    East Facility
+                                </td>
+
+
+                                <td>
+                                    22 Sep 2026
+                                </td>
+
+
+                                <td>
+                                    <strong>
+                                        89%
+                                    </strong>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="status operational">
+
+                                        <span class="status-dot"></span>
+
+                                        Operational
+
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- TABLE FOOTER -->
+
+                <div class="table-footer">
+
+                    <span
+                        class="record-count"
+                        id="recordCount"
+                    >
+                        Showing 5 of 1,248 equipment records
+                    </span>
+
+
+                    <div class="pagination">
+
+                        <button
+                            type="button"
+                            class="page-button"
+                        >
+                            ‹
+                        </button>
+
+                        <button
+                            type="button"
+                            class="page-button active"
+                        >
+                            1
+                        </button>
+
+                        <button
+                            type="button"
+                            class="page-button"
+                        >
+                            2
+                        </button>
+
+                        <button
+                            type="button"
+                            class="page-button"
+                        >
+                            3
+                        </button>
+
+                        <button
+                            type="button"
+                            class="page-button"
+                        >
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 UPCOMING MAINTENANCE
+            ====================================== -->
+
+            <section
+                class="panel"
+                id="maintenance"
+            >
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            SCHEDULE
+                        </div>
+
+                        <h2>
+                            Upcoming Maintenance
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="view-link"
+                        id="viewSchedule"
+                    >
+                        View schedule →
+                    </button>
+
+                </div>
+
+
+
+                <div class="maintenance-list">
+
+
+                    <!-- MAINTENANCE 1 -->
+
+                    <div class="maintenance-row">
+
+                        <div class="date-box">
+
+                            <strong>
+                                08
+                            </strong>
+
+                            <span>
+                                OCT
+                            </span>
+
+                        </div>
+
+
+                        <div class="maintenance-info">
+
+                            <strong>
+                                Routine inspection
+                            </strong>
+
+                            <span>
+                                Transport Unit A-17
+                            </span>
+
+                        </div>
+
+
+                        <span class="maintenance-tag scheduled">
+                            Scheduled
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- MAINTENANCE 2 -->
+
+                    <div class="maintenance-row">
+
+                        <div class="date-box">
+
+                            <strong>
+                                10
+                            </strong>
+
+                            <span>
+                                OCT
+                            </span>
+
+                        </div>
+
+
+                        <div class="maintenance-info">
+
+                            <strong>
+                                System calibration
+                            </strong>
+
+                            <span>
+                                Communication Hub C-08
+                            </span>
+
+                        </div>
+
+
+                        <span class="maintenance-tag priority">
+                            Priority
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- MAINTENANCE 3 -->
+
+                    <div class="maintenance-row">
+
+                        <div class="date-box">
+
+                            <strong>
+                                13
+                            </strong>
+
+                            <span>
+                                OCT
+                            </span>
+
+                        </div>
+
+
+                        <div class="maintenance-info">
+
+                            <strong>
+                                Component review
+                            </strong>
+
+                            <span>
+                                Support Module S-21
+                            </span>
+
+                        </div>
+
+
+                        <span class="maintenance-tag scheduled">
+                            Scheduled
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 EQUIPMENT READINESS
+            ====================================== -->
+
+            <section
+                class="panel"
+                id="readiness"
+            >
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            HEALTH
+                        </div>
+
+                        <h2>
+                            Equipment Readiness
+                        </h2>
+
+                    </div>
+
+
+                    <strong class="readiness-percentage">
+                        87.5%
+                    </strong>
+
+                </div>
+
+
+
+                <div class="readiness-content">
+
+
+                    <!-- CIRCLE -->
+
+                    <div class="readiness-circle">
+
+                        <div class="readiness-inner">
+
+                            <strong>
+                                87
+                            </strong>
+
+                            <span>
+                                %
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HEALTH BARS -->
+
+                    <div class="readiness-bars">
+
+
+                        <!-- OPERATIONAL -->
+
+                        <div class="health-row">
+
+                            <div class="health-label">
+
+                                <span>
+                                    Operational
+                                </span>
+
+                                <strong>
+                                    87.5%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="health-track">
+
+                                <div
+                                    class="health-fill green"
+                                    style="width: 87.5%;"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- MAINTENANCE -->
+
+                        <div class="health-row">
+
+                            <div class="health-label">
+
+                                <span>
+                                    Maintenance
+                                </span>
+
+                                <strong>
+                                    6.9%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="health-track">
+
+                                <div
+                                    class="health-fill orange"
+                                    style="width: 6.9%;"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ATTENTION -->
+
+                        <div class="health-row">
+
+                            <div class="health-label">
+
+                                <span>
+                                    Attention
+                                </span>
+
+                                <strong>
+                                    5.6%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="health-track">
+
+                                <div
+                                    class="health-fill red"
+                                    style="width: 5.6%;"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 REPORTS PLACEHOLDER
+            ====================================== -->
+
+            <section
+                class="panel small-panel"
+                id="reports"
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            ANALYTICS
+                        </div>
+
+                        <h2>
+                            Equipment Reports
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <p class="panel-description">
+                    Equipment performance and readiness reports are available for review.
+                </p>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 SETTINGS PLACEHOLDER
+            ====================================== -->
+
+            <section
+                class="panel small-panel"
+                id="settings"
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            SYSTEM
+                        </div>
+
+                        <h2>
+                            Dashboard Settings
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <p class="panel-description">
+                    Dashboard preferences and system configuration.
+                </p>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 FOOTER
+            ====================================== -->
+
+            <footer>
+
+                <span>
+                    EquipTrack • Equipment Management System
+                </span>
+
+                <span>
+                    Demo interface • Fictional data
+                </span>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================================
+         TOAST NOTIFICATION
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+        Action completed successfully.
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         defer ensures HTML loads first
+    ========================================== -->
+
+    <script
+        src="script.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

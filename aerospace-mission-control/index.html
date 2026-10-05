@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AeroCommand | Mission Control</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">A</div>
+
+            <div>
+                <h2>AeroCommand</h2>
+                <span>MISSION CONTROL</span>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="#overview" class="nav-link active">
+                <span>▣</span>
+                Overview
+            </a>
+
+            <a href="#missions" class="nav-link">
+                <span>◈</span>
+                Missions
+            </a>
+
+            <a href="#telemetry" class="nav-link">
+                <span>⌁</span>
+                Telemetry
+            </a>
+
+            <a href="#crew" class="nav-link">
+                <span>♙</span>
+                Crew
+            </a>
+
+            <a href="#alerts" class="nav-link">
+                <span>!</span>
+                Alerts
+            </a>
+
+            <a href="#reports" class="nav-link">
+                <span>▤</span>
+                Reports
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>All Systems</strong>
+                    <small>Operational</small>
+                </div>
+            </div>
+
+            <div class="operator">
+                <div class="operator-avatar">SC</div>
+
+                <div>
+                    <strong>Sarah Collins</strong>
+                    <small>Flight Director</small>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <div>
+                <p class="eyebrow">AEROSPACE OPERATIONS</p>
+                <h1>Mission Control Center</h1>
+            </div>
+
+            <div class="topbar-actions">
+
+                <div class="live-indicator">
+                    <span></span>
+                    LIVE
+                </div>
+
+                <button
+                    class="icon-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+                    🔔
+                </button>
+
+                <button
+                    class="profile-button"
+                    id="profileButton"
+                >
+                    SC
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- Mission Overview -->
+        <section id="overview" class="section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">MISSION STATUS</p>
+                    <h2>Operations Overview</h2>
+                </div>
+
+                <div class="current-time" id="currentTime">
+                    --:--:--
+                </div>
+            </div>
+
+
+            <div class="overview-grid">
+
+                <article class="metric-card">
+                    <div class="metric-icon blue">🚀</div>
+
+                    <div>
+                        <span>Active Missions</span>
+                        <strong>04</strong>
+                        <small class="positive">+1 this month</small>
+                    </div>
+                </article>
+
+
+                <article class="metric-card">
+                    <div class="metric-icon green">◉</div>
+
+                    <div>
+                        <span>Systems Online</span>
+                        <strong>98.7%</strong>
+                        <small class="positive">Stable</small>
+                    </div>
+                </article>
+
+
+                <article class="metric-card">
+                    <div class="metric-icon orange">◷</div>
+
+                    <div>
+                        <span>Next Launch</span>
+                        <strong>12d</strong>
+                        <small>08:42:16 remaining</small>
+                    </div>
+                </article>
+
+
+                <article class="metric-card">
+                    <div class="metric-icon purple">♙</div>
+
+                    <div>
+                        <span>Crew Members</span>
+                        <strong>06</strong>
+                        <small class="positive">All healthy</small>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Missions -->
+        <section id="missions" class="section">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <p class="section-label">FLIGHT OPERATIONS</p>
+                        <h2>Active Missions</h2>
+                    </div>
+
+                    <button
+                        class="primary-button"
+                        id="missionButton"
+                    >
+                        + New Mission
+                    </button>
+
+                </div>
+
+
+                <div class="mission-grid">
+
+                    <article class="mission-card">
+
+                        <div class="mission-top">
+                            <span class="mission-code">AC-204</span>
+                            <span class="badge success">On Track</span>
+                        </div>
+
+                        <h3>Orion Research Mission</h3>
+
+                        <p>
+                            Orbital research and atmospheric observation
+                            mission.
+                        </p>
+
+                        <div class="mission-info">
+                            <div>
+                                <span>Vehicle</span>
+                                <strong>ORION-X</strong>
+                            </div>
+
+                            <div>
+                                <span>Orbit</span>
+                                <strong>LEO</strong>
+                            </div>
+
+                            <div>
+                                <span>Progress</span>
+                                <strong>72%</strong>
+                            </div>
+                        </div>
+
+                        <div class="progress-track">
+                            <div
+                                class="progress-fill"
+                                style="width: 72%;"
+                            ></div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="mission-card">
+
+                        <div class="mission-top">
+                            <span class="mission-code">AC-205</span>
+                            <span class="badge warning">Standby</span>
+                        </div>
+
+                        <h3>Lunar Gateway Supply</h3>
+
+                        <p>
+                            Cargo delivery mission supporting lunar
+                            infrastructure.
+                        </p>
+
+                        <div class="mission-info">
+                            <div>
+                                <span>Vehicle</span>
+                                <strong>ATLAS-7</strong>
+                            </div>
+
+                            <div>
+                                <span>Orbit</span>
+                                <strong>LUNAR</strong>
+                            </div>
+
+                            <div>
+                                <span>Progress</span>
+                                <strong>45%</strong>
+                            </div>
+                        </div>
+
+                        <div class="progress-track">
+                            <div
+                                class="progress-fill orange-fill"
+                                style="width: 45%;"
+                            ></div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="mission-card">
+
+                        <div class="mission-top">
+                            <span class="mission-code">AC-206</span>
+                            <span class="badge success">On Track</span>
+                        </div>
+
+                        <h3>Earth Observation</h3>
+
+                        <p>
+                            Satellite imaging and environmental
+                            monitoring mission.
+                        </p>
+
+                        <div class="mission-info">
+                            <div>
+                                <span>Vehicle</span>
+                                <strong>EOS-3</strong>
+                            </div>
+
+                            <div>
+                                <span>Orbit</span>
+                                <strong>SSO</strong>
+                            </div>
+
+                            <div>
+                                <span>Progress</span>
+                                <strong>61%</strong>
+                            </div>
+                        </div>
+
+                        <div class="progress-track">
+                            <div
+                                class="progress-fill"
+                                style="width: 61%;"
+                            ></div>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Telemetry + Alerts -->
+        <section class="two-column">
+
+            <div
+                id="telemetry"
+                class="panel telemetry-panel"
+            >
+
+                <div class="panel-header">
+
+                    <div>
+                        <p class="section-label">REAL-TIME DATA</p>
+                        <h2>Vehicle Telemetry</h2>
+                    </div>
+
+                    <span class="live-badge">
+                        ● LIVE
+                    </span>
+
+                </div>
+
+
+                <div class="telemetry-list">
+
+                    <div class="telemetry-row">
+                        <span>Altitude</span>
+                        <strong id="altitudeValue">
+                            408.2 km
+                        </strong>
+                    </div>
+
+                    <div class="telemetry-row">
+                        <span>Velocity</span>
+                        <strong id="velocityValue">
+                            7.66 km/s
+                        </strong>
+                    </div>
+
+                    <div class="telemetry-row">
+                        <span>Fuel Level</span>
+                        <strong>82%</strong>
+                    </div>
+
+                    <div class="telemetry-row">
+                        <span>Cabin Pressure</span>
+                        <strong>101.3 kPa</strong>
+                    </div>
+
+                    <div class="telemetry-row">
+                        <span>Power Output</span>
+                        <strong>94.8 kW</strong>
+                    </div>
+
+                    <div class="telemetry-row">
+                        <span>Signal Strength</span>
+                        <strong>99.2%</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="alerts"
+                class="panel"
+            >
+
+                <div class="panel-header">
+
+                    <div>
+                        <p class="section-label">ATTENTION REQUIRED</p>
+                        <h2>Mission Alerts</h2>
+                    </div>
+
+                    <span class="alert-count">2</span>
+
+                </div>
+
+
+                <div class="alert-list">
+
+                    <div class="alert-item warning-alert">
+
+                        <div class="alert-icon">!</div>
+
+                        <div>
+                            <strong>Communication Delay</strong>
+
+                            <p>
+                                AC-205 signal delay detected.
+                            </p>
+
+                            <small>12 minutes ago</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-item info-alert">
+
+                        <div class="alert-icon">i</div>
+
+                        <div>
+                            <strong>Scheduled Check</strong>
+
+                            <p>
+                                Vehicle systems review due.
+                            </p>
+
+                            <small>38 minutes ago</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="secondary-button"
+                    id="clearAlerts"
+                >
+                    Acknowledge Alerts
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Crew -->
+        <section
+            id="crew"
+            class="section"
+        >
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <p class="section-label">FLIGHT TEAM</p>
+                        <h2>Crew & Operations Team</h2>
+                    </div>
+
+                    <span class="crew-status">
+                        6 Active
+                    </span>
+
+                </div>
+
+
+                <div class="crew-grid">
+
+                    <div class="crew-member">
+                        <div class="crew-avatar">SC</div>
+
+                        <div>
+                            <strong>Sarah Collins</strong>
+                            <span>Flight Director</span>
+                        </div>
+                    </div>
+
+
+                    <div class="crew-member">
+                        <div class="crew-avatar">RM</div>
+
+                        <div>
+                            <strong>Ryan Mitchell</strong>
+                            <span>Flight Controller</span>
+                        </div>
+                    </div>
+
+
+                    <div class="crew-member">
+                        <div class="crew-avatar">AK</div>
+
+                        <div>
+                            <strong>Aisha Khan</strong>
+                            <span>Systems Engineer</span>
+                        </div>
+                    </div>
+
+
+                    <div class="crew-member">
+                        <div class="crew-avatar">JL</div>
+
+                        <div>
+                            <strong>James Lee</strong>
+                            <span>Mission Specialist</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Reports -->
+        <section
+            id="reports"
+            class="section"
+        >
+
+            <div class="panel report-panel">
+
+                <div>
+                    <p class="section-label">MISSION DOCUMENTATION</p>
+                    <h2>Reports & Mission Logs</h2>
+
+                    <p>
+                        Access mission summaries, telemetry reports,
+                        operational logs, and system performance records.
+                    </p>
+                </div>
+
+                <button
+                    class="secondary-button"
+                    id="reportButton"
+                >
+                    View Reports
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <span>
+                AeroCommand Mission Control
+            </span>
+
+            <span>
+                Simulation Environment • All data fictional
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- Toast -->
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+    ></div>
+
+</body>
+</html>

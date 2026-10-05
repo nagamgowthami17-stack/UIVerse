@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Defence Operations Dashboard UI Template">
+    <title>Defence Operations Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">DO</div>
+            <div>
+                <h2>DefenceOps</h2>
+                <span>Operations Center</span>
+            </div>
+        </div>
+
+        <div class="nav-section">
+            <p class="nav-title">WORKSPACE</p>
+
+            <a href="#dashboard" class="nav-link active">
+                <span class="nav-icon">▦</span>
+                <span>Overview</span>
+            </a>
+
+            <a href="#operations" class="nav-link">
+                <span class="nav-icon">◇</span>
+                <span>Operations</span>
+            </a>
+
+            <a href="#alerts" class="nav-link">
+                <span class="nav-icon">!</span>
+                <span>Alerts</span>
+                <span class="alert-badge" id="alert-count">4</span>
+            </a>
+
+            <a href="#activity" class="nav-link">
+                <span class="nav-icon">↗</span>
+                <span>Activity</span>
+            </a>
+        </div>
+
+        <div class="nav-section">
+            <p class="nav-title">SYSTEM</p>
+
+            <a href="#reports" class="nav-link">
+                <span class="nav-icon">▤</span>
+                <span>Reports</span>
+            </a>
+
+            <a href="#settings" class="nav-link">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+        </div>
+
+        <div class="system-card">
+            <div class="online-dot"></div>
+            <div>
+                <strong>System Online</strong>
+                <span>Last sync 2 min ago</span>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <div>
+                <p class="eyebrow">OPERATIONS CENTER</p>
+                <h1>Defence Operations</h1>
+                <p class="subtitle">
+                    Monitor operational activity, system status and important alerts.
+                </p>
+            </div>
+
+            <div class="header-actions">
+
+                <div class="date-card">
+                    <div class="date-icon">◷</div>
+                    <div>
+                        <strong id="current-date">Monday, 05 October 2026</strong>
+                        <span id="current-time">09:42 UTC</span>
+                    </div>
+                </div>
+
+                <div class="profile">
+                    <span>SI</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- STATUS HEADER -->
+        <section class="section-heading">
+            <div>
+                <p class="eyebrow">CURRENT STATUS</p>
+                <h2>Operational Overview</h2>
+            </div>
+
+            <div class="live-status">
+                <span></span>
+                Live
+            </div>
+        </section>
+
+
+        <!-- STAT CARDS -->
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon blue">◇</div>
+                    <span class="trend positive">+8.4%</span>
+                </div>
+
+                <p>Active Operations</p>
+                <h3>24</h3>
+                <span class="stat-note">Compared with last week</span>
+            </article>
+
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon green">✓</div>
+                    <span class="trend positive">+3.1%</span>
+                </div>
+
+                <p>Mission Readiness</p>
+                <h3>94%</h3>
+                <span class="stat-note">Across active units</span>
+            </article>
+
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon orange">!</div>
+                    <span class="trend warning">2 new</span>
+                </div>
+
+                <p>Open Alerts</p>
+                <h3 id="open-alerts">4</h3>
+                <span class="stat-note">Requires attention</span>
+            </article>
+
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon purple">◷</div>
+                    <span class="trend stable">Stable</span>
+                </div>
+
+                <p>System Uptime</p>
+                <h3>99.98%</h3>
+                <span class="stat-note">Last 30 days</span>
+            </article>
+
+        </section>
+
+
+        <!-- OPERATIONS -->
+        <section class="panel" id="operations">
+
+            <div class="panel-header">
+                <div>
+                    <p class="eyebrow">ACTIVE MISSIONS</p>
+                    <h2>Operations Overview</h2>
+                </div>
+
+                <button class="text-button">View all →</button>
+            </div>
+
+
+            <div class="operation-list">
+
+                <div class="operation-row">
+
+                    <div class="operation-marker green-marker"></div>
+
+                    <div class="operation-info">
+                        <strong>Operation Atlas</strong>
+                        <span>Eastern Coordination Zone</span>
+                    </div>
+
+                    <div class="progress-area">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <strong>86%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress green-progress" style="width: 86%;"></div>
+                        </div>
+                    </div>
+
+                    <span class="status-pill success">On Track</span>
+
+                </div>
+
+
+                <div class="operation-row">
+
+                    <div class="operation-marker blue-marker"></div>
+
+                    <div class="operation-info">
+                        <strong>Operation Charlie</strong>
+                        <span>Western Coordination Zone</span>
+                    </div>
+
+                    <div class="progress-area">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <strong>68%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress blue-progress" style="width: 68%;"></div>
+                        </div>
+                    </div>
+
+                    <span class="status-pill active">Active</span>
+
+                </div>
+
+
+                <div class="operation-row">
+
+                    <div class="operation-marker orange-marker"></div>
+
+                    <div class="operation-info">
+                        <strong>Operation Bravo</strong>
+                        <span>Central Logistics Zone</span>
+                    </div>
+
+                    <div class="progress-area">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <strong>52%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress orange-progress" style="width: 52%;"></div>
+                        </div>
+                    </div>
+
+                    <span class="status-pill review">Review</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WEEKLY ACTIVITY -->
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <p class="eyebrow">ACTIVITY ANALYTICS</p>
+                    <h2>Weekly Activity</h2>
+                    <span class="panel-subtitle">Operational events recorded</span>
+                </div>
+
+                <span class="period-label">Last 7 days</span>
+            </div>
+
+            <div class="chart">
+
+                <div class="chart-column">
+                    <div class="bar" style="height: 48%;"></div>
+                    <span>Mon</span>
+                </div>
+
+                <div class="chart-column">
+                    <div class="bar" style="height: 72%;"></div>
+                    <span>Tue</span>
+                </div>
+
+                <div class="chart-column">
+                    <div class="bar" style="height: 60%;"></div>
+                    <span>Wed</span>
+                </div>
+
+                <div class="chart-column">
+                    <div class="bar highlight" style="height: 88%;"></div>
+                    <span>Thu</span>
+                </div>
+
+                <div class="chart-column">
+                    <div class="bar" style="height: 66%;"></div>
+                    <span>Fri</span>
+                </div>
+
+                <div class="chart-column">
+                    <div class="bar" style="height: 42%;"></div>
+                    <span>Sat</span>
+                </div>
+
+                <div class="chart-column">
+                    <div class="bar" style="height: 76%;"></div>
+                    <span>Sun</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ALERTS -->
+        <section class="panel" id="alerts">
+
+            <div class="panel-header">
+
+                <div>
+                    <p class="eyebrow">ATTENTION</p>
+                    <h2>Alerts</h2>
+                </div>
+
+                <span class="alert-summary">
+                    4 active
+                </span>
+
+            </div>
+
+
+            <div id="alert-list">
+
+                <div class="alert-row">
+                    <div class="alert-icon red">!</div>
+
+                    <div>
+                        <strong>System maintenance</strong>
+                        <span>Scheduled maintenance window approaching.</span>
+                        <small>12 minutes ago</small>
+                    </div>
+                </div>
+
+
+                <div class="alert-row">
+                    <div class="alert-icon orange">!</div>
+
+                    <div>
+                        <strong>Resource threshold</strong>
+                        <span>Resource utilization reached 82%.</span>
+                        <small>34 minutes ago</small>
+                    </div>
+                </div>
+
+
+                <div class="alert-row">
+                    <div class="alert-icon blue">i</div>
+
+                    <div>
+                        <strong>Report available</strong>
+                        <span>Weekly readiness report is ready.</span>
+                        <small>1 hour ago</small>
+                    </div>
+                </div>
+
+
+                <div class="alert-row">
+                    <div class="alert-icon blue">i</div>
+
+                    <div>
+                        <strong>Data synchronization</strong>
+                        <span>Operational data synchronization completed.</span>
+                        <small>2 hours ago</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button class="clear-button" id="clear-alerts">
+                Clear Alerts
+            </button>
+
+        </section>
+
+
+        <!-- ACTIVITY -->
+        <section class="panel" id="activity">
+
+            <div class="panel-header">
+
+                <div>
+                    <p class="eyebrow">TIMELINE</p>
+                    <h2>Recent Activity</h2>
+                </div>
+
+                <button class="text-button">View activity →</button>
+
+            </div>
+
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot green-dot"></div>
+                    <div>
+                        <strong>Mission readiness updated</strong>
+                        <span>Readiness increased to 94% across active units.</span>
+                        <small>8 minutes ago</small>
+                    </div>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-dot blue-dot"></div>
+                    <div>
+                        <strong>Operation Charlie updated</strong>
+                        <span>Mission progress updated to 68%.</span>
+                        <small>26 minutes ago</small>
+                    </div>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-dot orange-dot"></div>
+                    <div>
+                        <strong>Maintenance notification created</strong>
+                        <span>A scheduled maintenance window was added.</span>
+                        <small>1 hour ago</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <span>DefenceOps UI Template</span>
+            <span>Demo data • For educational purposes</span>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
