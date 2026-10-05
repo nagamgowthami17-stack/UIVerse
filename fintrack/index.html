@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FinTrack | Personal Finance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">₹</div>
+        <span>Fin<span>Track</span></span>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#transactions">Transactions</a>
+        <a href="#budgets">Budgets</a>
+        <a href="#goals">Goals</a>
+        <a href="#analytics">Analytics</a>
+    </nav>
+
+    <div class="nav-actions">
+
+        <button class="icon-btn" id="notificationBtn">
+            🔔
+            <span class="notification-dot"></span>
+        </button>
+
+        <button class="icon-btn" id="themeBtn">
+            🌙
+        </button>
+
+        <button class="profile-btn" id="profileBtn">
+            👤 Profile
+        </button>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="badge">
+            💰 Smart Personal Finance
+        </span>
+
+        <h1>
+            Take control of your
+            <span>money and future.</span>
+        </h1>
+
+        <p>
+            Track your income, manage expenses, create budgets,
+            monitor savings and make smarter financial decisions
+            with FinTrack.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="openTransaction('income')">
+                ＋ Add Income
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="scrollToSection('dashboard')">
+                📊 View Dashboard
+            </button>
+
+        </div>
+
+        <div class="hero-trust">
+
+            <div class="avatars">
+                <span>👩🏻</span>
+                <span>👨🏽</span>
+                <span>👩🏾</span>
+                <span>👨🏻</span>
+            </div>
+
+            <div>
+                <strong>10,000+ Users</strong>
+                <small>manage their money with FinTrack</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+        <div class="hero-chart">
+
+            <div class="mini-chart-head">
+                <span>Monthly Balance</span>
+                <strong>₹85,420</strong>
+            </div>
+
+            <div class="chart-bars">
+                <i style="height:42%"></i>
+                <i style="height:58%"></i>
+                <i style="height:48%"></i>
+                <i style="height:72%"></i>
+                <i style="height:62%"></i>
+                <i style="height:86%"></i>
+                <i style="height:96%"></i>
+            </div>
+
+            <div class="chart-months">
+                <span>Apr</span>
+                <span>May</span>
+                <span>Jun</span>
+                <span>Jul</span>
+                <span>Aug</span>
+                <span>Sep</span>
+                <span>Oct</span>
+            </div>
+
+        </div>
+
+
+        <div class="floating-card savings-card">
+
+            <div class="float-icon">
+                🎯
+            </div>
+
+            <div>
+                <strong>Goal Progress</strong>
+                <small>Laptop • 60% complete</small>
+            </div>
+
+        </div>
+
+
+        <div class="floating-card income-card">
+
+            <div class="health-circle">
+                +24%
+            </div>
+
+            <div>
+                <strong>Income Growth</strong>
+                <small>This month</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            ₹
+        </div>
+
+        <div>
+            <strong>₹85.4K</strong>
+            <span>Total Balance</span>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            ↗
+        </div>
+
+        <div>
+            <strong>₹52.5K</strong>
+            <span>Total Income</span>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            ↘
+        </div>
+
+        <div>
+            <strong>₹32.8K</strong>
+            <span>Total Expenses</span>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            🎯
+        </div>
+
+        <div>
+            <strong>₹19.6K</strong>
+            <span>Total Savings</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section class="section" id="dashboard">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                FINANCIAL OVERVIEW
+            </span>
+
+            <h2>
+                Personal Finance Dashboard 📊
+            </h2>
+
+            <p>
+                Everything you need to understand and manage your money.
+            </p>
+
+        </div>
+
+        <button
+            class="outline-btn"
+            onclick="openFinancialSummary()">
+            📋 Monthly Summary
+        </button>
+
+    </div>
+
+
+    <div class="account-summary">
+
+        <div class="summary-left">
+
+            <div class="account-avatar">
+                ₹
+            </div>
+
+            <div>
+
+                <span class="status-badge">
+                    ● Financially Active
+                </span>
+
+                <h3>
+                    My FinTrack Account
+                </h3>
+
+                <p>
+                    Personal account • September 2026
+                </p>
+
+                <p>
+                    Last updated today
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="balance-score">
+
+            <div class="score-circle">
+                <strong>82%</strong>
+            </div>
+
+            <span>
+                Financial Health
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-top">
+
+                <div class="dashboard-icon blue">
+                    💰
+                </div>
+
+                <span class="good-status">
+                    Growing
+                </span>
+
+            </div>
+
+            <h3>Income</h3>
+
+            <p>
+                Monthly income received
+            </p>
+
+            <div class="big-number">
+                ₹52,500
+            </div>
+
+            <button onclick="showMessage('Income details opened!')">
+                View Income →
+            </button>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-top">
+
+                <div class="dashboard-icon purple">
+                    💳
+                </div>
+
+                <span class="warning-status">
+                    64%
+                </span>
+
+            </div>
+
+            <h3>Expenses</h3>
+
+            <p>
+                Monthly spending
+            </p>
+
+            <div class="big-number">
+                ₹32,850
+            </div>
+
+            <button onclick="scrollToSection('transactions')">
+                View Expenses →
+            </button>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-top">
+
+                <div class="dashboard-icon orange">
+                    🎯
+                </div>
+
+                <span class="good-status">
+                    60%
+                </span>
+
+            </div>
+
+            <h3>Savings Goal</h3>
+
+            <p>
+                New Laptop
+            </p>
+
+            <div class="progress">
+                <div style="width:60%"></div>
+            </div>
+
+            <button onclick="scrollToSection('goals')">
+                View Goal →
+            </button>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-top">
+
+                <div class="dashboard-icon green">
+                    📈
+                </div>
+
+                <span class="good-status">
+                    Healthy
+                </span>
+
+            </div>
+
+            <h3>Net Savings</h3>
+
+            <p>
+                Income minus expenses
+            </p>
+
+            <div class="big-number">
+                ₹19,650
+            </div>
+
+            <button onclick="scrollToSection('analytics')">
+                View Analytics →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTIFICATIONS ================= -->
+
+<section class="section notification-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                STAY UPDATED
+            </span>
+
+            <h2>
+                🔔 Financial Notifications
+            </h2>
+
+            <p>
+                Important updates about your money.
+            </p>
+
+        </div>
+
+        <button
+            class="outline-btn"
+            onclick="markNotificationsRead()">
+            Mark All Read
+        </button>
+
+    </div>
+
+
+    <div class="notification-list">
+
+        <div class="notification-item">
+
+            <div class="notification-icon red">
+                ⚠️
+            </div>
+
+            <div class="notification-content">
+
+                <strong>
+                    Budget Alert
+                </strong>
+
+                <p>
+                    Food & Dining budget is 68% used.
+                </p>
+
+                <small>
+                    10 minutes ago
+                </small>
+
+            </div>
+
+            <button onclick="scrollToSection('budgets')">
+                View
+            </button>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div class="notification-icon purple">
+                🎯
+            </div>
+
+            <div class="notification-content">
+
+                <strong>
+                    Savings Progress
+                </strong>
+
+                <p>
+                    Your laptop goal has reached 60%.
+                </p>
+
+                <small>
+                    1 hour ago
+                </small>
+
+            </div>
+
+            <button onclick="scrollToSection('goals')">
+                View
+            </button>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div class="notification-icon blue">
+                📅
+            </div>
+
+            <div class="notification-content">
+
+                <strong>
+                    Monthly Review
+                </strong>
+
+                <p>
+                    Your September financial summary is ready.
+                </p>
+
+                <small>
+                    Today
+                </small>
+
+            </div>
+
+            <button onclick="openFinancialSummary()">
+                View
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TRANSACTIONS ================= -->
+
+<section class="section" id="transactions">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                MONEY ACTIVITY
+            </span>
+
+            <h2>
+                💳 Recent Transactions
+            </h2>
+
+            <p>
+                Review your latest income and expenses.
+            </p>
+
+        </div>
+
+        <button
+            class="primary-btn small-btn"
+            onclick="openTransaction('expense')">
+            ＋ Add Transaction
+        </button>
+
+    </div>
+
+
+    <div class="transaction-tools">
+
+        <input
+            id="transactionSearch"
+            type="search"
+            placeholder="🔍 Search transactions..."
+        >
+
+        <select id="transactionFilter">
+
+            <option value="all">
+                All Transactions
+            </option>
+
+            <option value="income">
+                Income
+            </option>
+
+            <option value="expense">
+                Expenses
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div
+        class="transactions-table"
+        id="transactionList">
+    </div>
+
+</section>
+
+
+<!-- ================= BUDGETS ================= -->
+
+<section class="section" id="budgets">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                SPENDING CONTROL
+            </span>
+
+            <h2>
+                📋 Monthly Budgets
+            </h2>
+
+            <p>
+                Set limits and keep your spending on track.
+            </p>
+
+        </div>
+
+        <button
+            class="primary-btn small-btn"
+            onclick="openBudget()">
+            ＋ Add Budget
+        </button>
+
+    </div>
+
+
+    <div class="budget-grid">
+
+        <div class="budget-card">
+
+            <div class="budget-top">
+
+                <span>
+                    🍔 Food & Dining
+                </span>
+
+                <b>
+                    ₹6,800 / ₹10,000
+                </b>
+
+            </div>
+
+            <div class="progress">
+                <div style="width:68%"></div>
+            </div>
+
+            <small>
+                ₹3,200 remaining
+            </small>
+
+        </div>
+
+
+        <div class="budget-card">
+
+            <div class="budget-top">
+
+                <span>
+                    🚗 Transport
+                </span>
+
+                <b>
+                    ₹3,200 / ₹5,000
+                </b>
+
+            </div>
+
+            <div class="progress">
+                <div style="width:64%"></div>
+            </div>
+
+            <small>
+                ₹1,800 remaining
+            </small>
+
+        </div>
+
+
+        <div class="budget-card">
+
+            <div class="budget-top">
+
+                <span>
+                    🛍️ Shopping
+                </span>
+
+                <b>
+                    ₹4,750 / ₹8,000
+                </b>
+
+            </div>
+
+            <div class="progress">
+                <div style="width:59%"></div>
+            </div>
+
+            <small>
+                ₹3,250 remaining
+            </small>
+
+        </div>
+
+
+        <div class="budget-card">
+
+            <div class="budget-top">
+
+                <span>
+                    🎬 Entertainment
+                </span>
+
+                <b>
+                    ₹2,100 / ₹4,000
+                </b>
+
+            </div>
+
+            <div class="progress">
+                <div style="width:53%"></div>
+            </div>
+
+            <small>
+                ₹1,900 remaining
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SAVINGS GOALS ================= -->
+
+<section class="section" id="goals">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                FUTURE PLANNING
+            </span>
+
+            <h2>
+                🎯 Savings Goals
+            </h2>
+
+            <p>
+                Turn your plans into achievable financial goals.
+            </p>
+
+        </div>
+
+        <button
+            class="primary-btn small-btn"
+            onclick="openGoal()">
+            ＋ Create Goal
+        </button>
+
+    </div>
+
+
+    <div class="goal-grid">
+
+        <div class="goal-card">
+
+            <div class="goal-icon">
+                💻
+            </div>
+
+            <h3>
+                New Laptop
+            </h3>
+
+            <p>
+                ₹42,000 saved of ₹70,000
+            </p>
+
+            <div class="progress">
+                <div style="width:60%"></div>
+            </div>
+
+            <strong>
+                60%
+            </strong>
+
+            <button onclick="showMessage('Laptop goal opened!')">
+                View Goal →
+            </button>
+
+        </div>
+
+
+        <div class="goal-card">
+
+            <div class="goal-icon">
+                ✈️
+            </div>
+
+            <h3>
+                Vacation
+            </h3>
+
+            <p>
+                ₹20,000 saved of ₹50,000
+            </p>
+
+            <div class="progress">
+                <div style="width:40%"></div>
+            </div>
+
+            <strong>
+                40%
+            </strong>
+
+            <button onclick="showMessage('Vacation goal opened!')">
+                View Goal →
+            </button>
+
+        </div>
+
+
+        <div class="goal-card">
+
+            <div class="goal-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Emergency Fund
+            </h3>
+
+            <p>
+                ₹55,000 saved of ₹1,00,000
+            </p>
+
+            <div class="progress">
+                <div style="width:55%"></div>
+            </div>
+
+            <strong>
+                55%
+            </strong>
+
+            <button onclick="showMessage('Emergency Fund opened!')">
+                View Goal →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ANALYTICS ================= -->
+
+<section class="section" id="analytics">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                FINANCIAL INSIGHTS
+            </span>
+
+            <h2>
+                📊 Spending Analytics
+            </h2>
+
+            <p>
+                Understand where your money goes each month.
+            </p>
+
+        </div>
+
+        <button
+            class="outline-btn"
+            onclick="openFinancialSummary()">
+            📋 Full Report
+        </button>
+
+    </div>
+
+
+    <div class="analytics-grid">
+
+        <div class="analytics-panel">
+
+            <h3>
+                Income vs Expenses
+            </h3>
+
+            <p>
+                September 2026
+            </p>
+
+            <div class="large-bars">
+
+                <div>
+                    <i style="height:88%"></i>
+                    <span>
+                        Income<br>
+                        ₹52.5K
+                    </span>
+                </div>
+
+                <div>
+                    <i style="height:55%"></i>
+                    <span>
+                        Expenses<br>
+                        ₹32.8K
+                    </span>
+                </div>
+
+                <div>
+                    <i style="height:33%"></i>
+                    <span>
+                        Savings<br>
+                        ₹19.6K
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="analytics-panel">
+
+            <h3>
+                Spending Distribution
+            </h3>
+
+            <p>
+                This month's expenses
+            </p>
+
+            <div class="analytics-content">
+
+                <div class="donut">
+
+                    <div>
+                        <strong>
+                            ₹32.8K
+                        </strong>
+
+                        <span>
+                            Total spent
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="legend">
+
+                    <span>
+                        🏠 Housing
+                        <b>35%</b>
+                    </span>
+
+                    <span>
+                        🍔 Food
+                        <b>21%</b>
+                    </span>
+
+                    <span>
+                        🚗 Transport
+                        <b>14%</b>
+                    </span>
+
+                    <span>
+                        🛍️ Shopping
+                        <b>18%</b>
+                    </span>
+
+                    <span>
+                        📦 Other
+                        <b>12%</b>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ACCOUNTS ================= -->
+
+<section class="section two-column">
+
+    <div class="info-panel">
+
+        <div class="panel-heading">
+
+            <div>
+
+                <span class="panel-icon">
+                    💳
+                </span>
+
+                <div>
+
+                    <h3>
+                        Bank Accounts & Cards
+                    </h3>
+
+                    <p>
+                        Your connected accounts
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button onclick="showMessage('Account management opened!')">
+                Manage
+            </button>
+
+        </div>
+
+
+        <div class="account-row">
+
+            <div class="bank-logo">
+                SBI
+            </div>
+
+            <div>
+
+                <strong>
+                    State Bank Account
+                </strong>
+
+                <span>
+                    •••• 4521
+                </span>
+
+            </div>
+
+            <b>
+                ₹58,420
+            </b>
+
+        </div>
+
+
+        <div class="account-row">
+
+            <div class="bank-logo">
+                HDFC
+            </div>
+
+            <div>
+
+                <strong>
+                    HDFC Savings
+                </strong>
+
+                <span>
+                    •••• 7824
+                </span>
+
+            </div>
+
+            <b>
+                ₹27,000
+            </b>
+
+        </div>
+
+    </div>
+
+
+    <div class="info-panel">
+
+        <div class="panel-heading">
+
+            <div>
+
+                <span class="panel-icon">
+                    💡
+                </span>
+
+                <div>
+
+                    <h3>
+                        Financial Tips
+                    </h3>
+
+                    <p>
+                        Small steps, better finances
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="tip-item">
+            💰 Try saving at least 20% of monthly income.
+        </div>
+
+        <div class="tip-item">
+            📋 Review your budgets before making large purchases.
+        </div>
+
+        <div class="tip-item">
+            🛡️ Build an emergency fund for unexpected expenses.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div>
+
+        <span class="section-label">
+            FINTRACK
+        </span>
+
+        <h2>
+            Your money deserves a smarter plan. 💚
+        </h2>
+
+        <p>
+            Track today, save tomorrow and build your financial future.
+        </p>
+
+    </div>
+
+    <button
+        class="white-btn"
+        onclick="openGoal()">
+        🎯 Create a Savings Goal
+    </button>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    ₹
+                </div>
+
+                <span>
+                    Fin<span>Track</span>
+                </span>
+
+            </div>
+
+            <p>
+                Simple personal finance management for smarter
+                everyday financial decisions.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                FinTrack
+            </h4>
+
+            <a href="#dashboard">
+                Dashboard
+            </a>
+
+            <a href="#transactions">
+                Transactions
+            </a>
+
+            <a href="#budgets">
+                Budgets
+            </a>
+
+            <a href="#goals">
+                Savings Goals
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Insights
+            </h4>
+
+            <a href="#analytics">
+                Analytics
+            </a>
+
+            <a href="#dashboard">
+                Financial Health
+            </a>
+
+            <a href="#budgets">
+                Budget Planning
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Support
+            </h4>
+
+            <a href="#" onclick="showMessage('Help Center opened!');return false;">
+                Help Center
+            </a>
+
+            <a href="#" onclick="showMessage('Contact support opened!');return false;">
+                Contact Us
+            </a>
+
+            <a href="#" onclick="showMessage('Privacy Policy opened!');return false;">
+                Privacy Policy
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 FinTrack. Personal finance made simple.
+        </span>
+
+        <span>
+            Made with 💚 for smarter money management.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= MODAL ================= -->
+
+<div
+    class="modal-overlay"
+    id="modalOverlay">
+
+    <div class="modal">
+
+        <button
+            class="modal-close"
+            onclick="closeModal()">
+            ×
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<div
+    class="toast"
+    id="toast">
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
