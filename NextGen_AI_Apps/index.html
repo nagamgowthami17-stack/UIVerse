@@ -1,61 +1,287 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NextGen AI UI Collection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Research Workspace</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="hero">
-    <div class="eyebrow">UI TEMPLATE COLLECTION · HACKATHON</div>
-    <h1>NextGen AI</h1>
-    <p>Four original, responsive interface concepts exploring modern AI workflows, agent orchestration, research, and intelligent analytics.</p>
-    <div class="stats">
-      <span>4 AI Interfaces</span><span>HTML · CSS · JS</span><span>Responsive</span><span>Original UI</span>
+
+<header>
+
+  <div class="brand">
+    Research<span>AI</span>
+  </div>
+
+  <nav>
+    <button class="nav active">Workspace</button>
+    <button class="nav">Sources</button>
+    <button class="nav">Analysis</button>
+  </nav>
+
+  <div class="headerActions">
+    <span id="saveStatus">Saved</span>
+    <button id="saveBtn">Save</button>
+    <button id="newBtn">+ New Research</button>
+  </div>
+
+</header>
+
+
+<main>
+
+  <section class="hero">
+
+    <div>
+      <small>RESEARCH WORKSPACE</small>
+
+      <h1 id="researchTitle">
+        The future of renewable energy
+      </h1>
+
+      <p>
+        Collect sources, explore evidence, and generate
+        AI-assisted research insights.
+      </p>
     </div>
-  </header>
 
-  <main class="wrap">
-    <div class="intro">
-      <div><div class="eyebrow">MY UI COLLECTION</div><h2>Explore the templates</h2></div>
-      <p>Designed as application-style interfaces rather than simple landing pages.</p>
+    <div class="search">
+
+      <input
+        id="searchInput"
+        placeholder="Search your research..."
+      >
+
+      <button id="searchBtn">
+        Search
+      </button>
+
     </div>
 
-    <section class="grid">
-      <a class="card" href="ai-research-workspace/index.html">
-        <span class="pill">AI · Research</span>
-        <h2>AI Research Workspace</h2>
-        <p>Organize sources, ask questions, summarize findings, and build a research brief.</p>
-        <span class="open">Open template →</span>
-      </a>
+  </section>
 
-      <a class="card" href="ai-agent-control-center/index.html">
-        <span class="pill">AI Agents · Control</span>
-        <h2>AI Agent Control Center</h2>
-        <p>Monitor agents, tasks, execution status, activity logs, and automation health.</p>
-        <span class="open">Open template →</span>
-      </a>
 
-      <a class="card" href="ai-prompt-lab/index.html">
-        <span class="pill">AI · Prompting</span>
-        <h2>AI Prompt Lab</h2>
-        <p>Experiment with prompts, compare outputs, save versions, and evaluate responses.</p>
-        <span class="open">Open template →</span>
-      </a>
+  <div class="workspace">
 
-      <a class="card" href="ai-insight-dashboard/index.html">
-        <span class="pill">AI · Analytics</span>
-        <h2>AI Insight Dashboard</h2>
-        <p>Turn product metrics into natural-language insights with trends, alerts, and recommendations.</p>
-        <span class="open">Open template →</span>
-      </a>
+
+    <!-- SOURCES -->
+
+    <section class="panel sources">
+
+      <div class="panelHeader">
+
+        <div>
+          <small>SOURCES</small>
+          <h2>Research materials</h2>
+        </div>
+
+        <button id="addSource">
+          + Add source
+        </button>
+
+      </div>
+
+
+      <div id="sourceList">
+
+        <article
+          class="source active"
+          data-title="International Energy Agency"
+          data-description="Global renewable energy trends, capacity growth, and energy transition data."
+        >
+
+          <span class="sourceIcon">
+            IE
+          </span>
+
+          <div>
+            <b>International Energy Agency</b>
+
+            <p>
+              Renewable energy market update
+            </p>
+
+            <small>
+              Report · 2026
+            </small>
+          </div>
+
+        </article>
+
+
+        <article
+          class="source"
+          data-title="World Energy Outlook"
+          data-description="Research on global energy demand, renewable technologies, and future energy systems."
+        >
+
+          <span class="sourceIcon">
+            WE
+          </span>
+
+          <div>
+            <b>World Energy Outlook</b>
+
+            <p>
+              Global energy outlook
+            </p>
+
+            <small>
+              Report · 2026
+            </small>
+          </div>
+
+        </article>
+
+
+        <article
+          class="source"
+          data-title="Renewable Energy Review"
+          data-description="Overview of solar, wind, storage, and emerging renewable technologies."
+        >
+
+          <span class="sourceIcon">
+            RE
+          </span>
+
+          <div>
+            <b>Renewable Energy Review</b>
+
+            <p>
+              Technology overview
+            </p>
+
+            <small>
+              Journal · 2025
+            </small>
+          </div>
+
+        </article>
+
+      </div>
+
     </section>
 
-    <section class="about">
-      <b>Built for the UI Template Collection Hackathon</b>
-      <p>HTML5 · CSS3 · JavaScript · Responsive Design · GitHub Collaboration</p>
+
+    <!-- RESEARCH -->
+
+    <section class="panel research">
+
+      <div class="panelHeader">
+
+        <div>
+          <small>RESEARCH QUESTION</small>
+
+          <h2>
+            What will drive renewable energy growth?
+          </h2>
+        </div>
+
+        <button id="analyzeBtn">
+          ✦ Run analysis
+        </button>
+
+      </div>
+
+
+      <div class="question">
+
+        <textarea id="question">
+What technologies and market factors are most likely to accelerate renewable energy adoption over the next decade?
+        </textarea>
+
+      </div>
+
+
+      <div class="analysis">
+
+        <div class="analysisIcon">
+          ✦
+        </div>
+
+        <div>
+
+          <small>
+            AI ANALYSIS
+          </small>
+
+          <h3 id="analysisTitle">
+            Solar, storage, and grid modernization are key drivers.
+          </h3>
+
+          <p id="analysisText">
+            Current research indicates that falling solar costs,
+            improvements in energy storage, and investment in
+            electricity infrastructure are likely to accelerate
+            renewable adoption.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="findings">
+
+        <div>
+          <span>01</span>
+          <b>Lower technology costs</b>
+          <p>
+            Solar and storage costs continue to improve.
+          </p>
+        </div>
+
+        <div>
+          <span>02</span>
+          <b>Energy storage</b>
+          <p>
+            Batteries can improve reliability and flexibility.
+          </p>
+        </div>
+
+        <div>
+          <span>03</span>
+          <b>Grid investment</b>
+          <p>
+            Modern infrastructure enables higher renewable penetration.
+          </p>
+        </div>
+
+      </div>
+
     </section>
-  </main>
+
+  </div>
+
+
+  <!-- BOTTOM -->
+
+  <section class="bottom">
+
+    <div class="status">
+      <span class="live"></span>
+      <b id="statusText">
+        Research workspace ready
+      </b>
+
+      <span id="sourceCount">
+        3 sources
+      </span>
+    </div>
+
+    <button id="exportBtn">
+      Export research
+    </button>
+
+  </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
