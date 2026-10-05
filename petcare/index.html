@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare | Pet Healthcare Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="logo">
+        <span class="logo-icon">🐾</span>
+        <span>Pet<span>Care</span></span>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#pets">My Pets</a>
+        <a href="#appointments">Appointments</a>
+        <a href="#health">Health</a>
+        <a href="#clinics">Clinics</a>
+        <a href="#shop">Pet Shop</a>
+    </nav>
+
+    <div class="nav-actions">
+        <button class="icon-btn" id="notificationBtn" title="Notifications">
+            🔔
+            <span class="notification-dot"></span>
+        </button>
+
+        <button class="theme-btn" id="themeBtn">🌙</button>
+
+        <button class="profile-btn" id="profileBtn">
+            <span>👤</span>
+            <span>Profile</span>
+        </button>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🐾 Complete Pet Healthcare
+        </div>
+
+        <h1>
+            Because every paw
+            <span>deserves the best care.</span>
+        </h1>
+
+        <p>
+            Manage your pet's health, appointments, vaccinations,
+            medications and wellness — all in one simple platform.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="primary-btn" onclick="openAppointment()">
+                🩺 Book Vet Appointment
+            </button>
+
+            <button class="secondary-btn" onclick="scrollToSection('dashboard')">
+                📊 View Health Dashboard
+            </button>
+        </div>
+
+        <div class="hero-trust">
+            <div class="avatars">
+                <span>👩🏻</span>
+                <span>👨🏽</span>
+                <span>👩🏾</span>
+                <span>👨🏻</span>
+            </div>
+            <div>
+                <strong>12,000+ Pet Parents</strong>
+                <small>trust PetCare</small>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80"
+            alt="Happy dog"
+        >
+
+        <div class="floating-card vaccine-card">
+            <div class="float-icon">💉</div>
+            <div>
+                <strong>Vaccination Due</strong>
+                <small>Buddy • In 5 days</small>
+            </div>
+        </div>
+
+        <div class="floating-card health-card">
+            <div class="health-circle">92%</div>
+            <div>
+                <strong>Healthy</strong>
+                <small>Buddy's health score</small>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK STATS ================= -->
+<section class="stats">
+
+    <div class="stat-card">
+        <div class="stat-icon">🐕</div>
+        <div>
+            <strong>12K+</strong>
+            <span>Pets Registered</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">🩺</div>
+        <div>
+            <strong>250+</strong>
+            <span>Veterinarians</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">📅</div>
+        <div>
+            <strong>35K+</strong>
+            <span>Appointments</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <div>
+            <strong>4.9/5</strong>
+            <span>Parent Rating</span>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= DASHBOARD ================= -->
+<section class="section dashboard-section" id="dashboard">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">HEALTH OVERVIEW</span>
+            <h2>Pet Health Dashboard 📊</h2>
+            <p>Everything you need to monitor Buddy's health.</p>
+        </div>
+
+        <button class="outline-btn" onclick="openHealthRecords()">
+            📋 View Health Records
+        </button>
+    </div>
+
+
+    <!-- Pet Summary -->
+    <div class="dashboard-pet">
+
+        <div class="pet-summary-left">
+            <img
+                src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=300&q=80"
+                alt="Buddy"
+            >
+
+            <div>
+                <span class="status-badge">● Healthy</span>
+                <h3>Buddy</h3>
+                <p>Golden Retriever • 3 Years</p>
+                <p>Male • 24 kg</p>
+            </div>
+        </div>
+
+        <div class="health-score">
+            <div class="score-circle">
+                <strong>92%</strong>
+            </div>
+            <span>Overall Health</span>
+        </div>
+
+    </div>
+
+
+    <!-- Dashboard Cards -->
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+            <div class="dashboard-card-top">
+                <div class="dashboard-icon blue">💉</div>
+                <span class="good-status">Good</span>
+            </div>
+            <h3>Vaccinations</h3>
+            <p>3 of 4 vaccinations completed</p>
+
+            <div class="progress">
+                <div style="width:75%"></div>
+            </div>
+
+            <button onclick="openVaccinations()">View Schedule →</button>
+        </div>
+
+
+        <div class="dashboard-card">
+            <div class="dashboard-card-top">
+                <div class="dashboard-icon purple">💊</div>
+                <span class="good-status">Active</span>
+            </div>
+            <h3>Medications</h3>
+            <p>2 medication reminders today</p>
+
+            <div class="medicine-time">
+                <span>Vitamin Supplement</span>
+                <strong>7:00 PM</strong>
+            </div>
+
+            <button onclick="openMedication()">View Medicines →</button>
+        </div>
+
+
+        <div class="dashboard-card">
+            <div class="dashboard-card-top">
+                <div class="dashboard-icon orange">⚖️</div>
+                <span class="good-status">Normal</span>
+            </div>
+            <h3>Weight</h3>
+            <p>Current weight</p>
+
+            <div class="big-number">
+                24 <small>kg</small>
+            </div>
+
+            <button onclick="showMessage('Weight history opened!')">
+                View History →
+            </button>
+        </div>
+
+
+        <div class="dashboard-card">
+            <div class="dashboard-card-top">
+                <div class="dashboard-icon green">❤️</div>
+                <span class="good-status">Normal</span>
+            </div>
+            <h3>Vital Signs</h3>
+            <p>Latest health check</p>
+
+            <div class="vitals">
+                <span>❤️ 78 BPM</span>
+                <span>🌡️ 38.5°C</span>
+            </div>
+
+            <button onclick="openHealthRecords()">View Records →</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTIFICATIONS ================= -->
+<section class="section notification-section">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">STAY UPDATED</span>
+            <h2>🔔 Health Notifications</h2>
+            <p>Important reminders for your pet's health.</p>
+        </div>
+
+        <button class="outline-btn" onclick="markNotificationsRead()">
+            Mark All Read
+        </button>
+    </div>
+
+    <div class="notification-list">
+
+        <div class="notification-item">
+            <div class="notification-icon red">💉</div>
+            <div class="notification-content">
+                <strong>Vaccination Reminder</strong>
+                <p>Buddy's Rabies vaccination is due in 5 days.</p>
+                <small>10 minutes ago</small>
+            </div>
+            <button onclick="openVaccinations()">View</button>
+        </div>
+
+        <div class="notification-item">
+            <div class="notification-icon purple">💊</div>
+            <div class="notification-content">
+                <strong>Medication Reminder</strong>
+                <p>Give Buddy his Vitamin supplement at 7:00 PM.</p>
+                <small>1 hour ago</small>
+            </div>
+            <button onclick="openMedication()">View</button>
+        </div>
+
+        <div class="notification-item">
+            <div class="notification-icon blue">📅</div>
+            <div class="notification-content">
+                <strong>Upcoming Appointment</strong>
+                <p>Buddy has a veterinary appointment on October 8.</p>
+                <small>Today</small>
+            </div>
+            <button onclick="openAppointmentDetails()">View</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PET PROFILES ================= -->
+<section class="section" id="pets">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">YOUR PETS</span>
+            <h2>🐕 My Pets</h2>
+            <p>Manage profiles and health information for your pets.</p>
+        </div>
+
+        <button class="primary-btn small-btn" onclick="openPetModal()">
+            + Add New Pet
+        </button>
+    </div>
+
+    <div class="pet-grid">
+
+        <div class="pet-card">
+
+            <div class="pet-image">
+                <img
+                    src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=500&q=80"
+                    alt="Buddy"
+                >
+                <span class="pet-status">Healthy</span>
+            </div>
+
+            <div class="pet-info">
+                <h3>Buddy 🐕</h3>
+                <p>Golden Retriever</p>
+
+                <div class="pet-details">
+                    <span>♂ 3 Years</span>
+                    <span>⚖️ 24 kg</span>
+                </div>
+
+                <button class="card-btn" onclick="openPetProfile('Buddy')">
+                    View Pet Profile
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="pet-card">
+
+            <div class="pet-image">
+                <img
+                    src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=500&q=80"
+                    alt="Luna"
+                >
+                <span class="pet-status">Healthy</span>
+            </div>
+
+            <div class="pet-info">
+                <h3>Luna 🐈</h3>
+                <p>British Shorthair</p>
+
+                <div class="pet-details">
+                    <span>♀ 2 Years</span>
+                    <span>⚖️ 4.8 kg</span>
+                </div>
+
+                <button class="card-btn" onclick="openPetProfile('Luna')">
+                    View Pet Profile
+                </button>
+            </div>
+
+        </div>
+
+
+        <button class="add-pet-card" onclick="openPetModal()">
+            <div>+</div>
+            <strong>Add Another Pet</strong>
+            <span>Create a new pet profile</span>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= APPOINTMENTS ================= -->
+<section class="section appointment-section" id="appointments">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">VETERINARY CARE</span>
+            <h2>🩺 Veterinary Appointments</h2>
+            <p>Book and manage appointments with trusted veterinarians.</p>
+        </div>
+
+        <button class="primary-btn small-btn" onclick="openAppointment()">
+            + Book Appointment
+        </button>
+    </div>
+
+
+    <div class="appointment-card">
+
+        <div class="appointment-date">
+            <span>OCT</span>
+            <strong>08</strong>
+            <small>2026</small>
+        </div>
+
+        <div class="appointment-info">
+            <span class="appointment-tag">UPCOMING</span>
+            <h3>General Health Checkup</h3>
+            <p>👨‍⚕️ Dr. Priya Menon</p>
+            <p>🏥 Green Paws Veterinary Hospital</p>
+            <p>🕙 10:30 AM</p>
+        </div>
+
+        <div class="appointment-actions">
+            <button class="primary-btn" onclick="openAppointmentDetails()">
+                View Details
+            </button>
+            <button class="cancel-btn" onclick="cancelAppointment()">
+                Cancel
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HEALTH RECORDS ================= -->
+<section class="section health-record-section" id="health">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">MEDICAL HISTORY</span>
+            <h2>📋 Pet Health Records</h2>
+            <p>Keep important medical information organized.</p>
+        </div>
+
+        <button class="outline-btn" onclick="addHealthRecord()">
+            + Add Record
+        </button>
+    </div>
+
+
+    <div class="records-table">
+
+        <div class="record-row record-header">
+            <span>Date</span>
+            <span>Type</span>
+            <span>Veterinarian</span>
+            <span>Status</span>
+            <span>Action</span>
+        </div>
+
+        <div class="record-row">
+            <span>Sep 18, 2026</span>
+            <span>🩺 Health Checkup</span>
+            <span>Dr. Priya Menon</span>
+            <span class="record-success">Completed</span>
+            <button onclick="viewRecord('Health Checkup')">View</button>
+        </div>
+
+        <div class="record-row">
+            <span>Aug 10, 2026</span>
+            <span>💉 Vaccination</span>
+            <span>Dr. Arun Kumar</span>
+            <span class="record-success">Completed</span>
+            <button onclick="viewRecord('Vaccination')">View</button>
+        </div>
+
+        <div class="record-row">
+            <span>Jul 05, 2026</span>
+            <span>💊 Medication</span>
+            <span>Dr. Priya Menon</span>
+            <span class="record-success">Completed</span>
+            <button onclick="viewRecord('Medication')">View</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= VACCINATIONS & MEDICATION ================= -->
+<section class="section two-column">
+
+    <div class="info-panel">
+
+        <div class="panel-heading">
+            <div>
+                <span class="panel-icon">💉</span>
+                <div>
+                    <h3>Vaccination Schedule</h3>
+                    <p>Keep Buddy protected</p>
+                </div>
+            </div>
+            <button onclick="openVaccinations()">View All</button>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot completed">✓</div>
+            <div>
+                <strong>DHPP Vaccine</strong>
+                <span>Completed • Aug 10, 2026</span>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot completed">✓</div>
+            <div>
+                <strong>Rabies Vaccine</strong>
+                <span>Completed • Aug 10, 2026</span>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot upcoming">!</div>
+            <div>
+                <strong>Annual Booster</strong>
+                <span>Due • Oct 13, 2026</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="info-panel">
+
+        <div class="panel-heading">
+            <div>
+                <span class="panel-icon">💊</span>
+                <div>
+                    <h3>Medication Reminders</h3>
+                    <p>Today's medications</p>
+                </div>
+            </div>
+            <button onclick="openMedication()">View All</button>
+        </div>
+
+        <div class="medicine-item">
+            <div class="medicine-icon">💊</div>
+            <div>
+                <strong>Vitamin Supplement</strong>
+                <span>1 tablet • Daily</span>
+            </div>
+            <b>7:00 PM</b>
+        </div>
+
+        <div class="medicine-item">
+            <div class="medicine-icon">💊</div>
+            <div>
+                <strong>Joint Support</strong>
+                <span>1 capsule • Daily</span>
+            </div>
+            <b>9:00 PM</b>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEARBY CLINICS ================= -->
+<section class="section clinics-section" id="clinics">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-label">VETERINARY SERVICES</span>
+            <h2>🏥 Nearby Veterinary Clinics</h2>
+            <p>Find trusted veterinary hospitals near you.</p>
+        </div>
+
+        <button class="primary-btn small-btn" onclick="findClinics()">
+            📍 Find Nearby
+        </button>
+
+    </div>
+
+
+    <div class="clinic-search">
+
+        <div class="search-box">
+            🔍
+            <input
+                type="text"
+                id="clinicSearch"
+                placeholder="Search veterinary hospital..."
+                onkeyup="filterClinics()"
+            >
+        </div>
+
+        <select id="clinicFilter" onchange="filterClinics()">
+            <option value="all">All Clinics</option>
+            <option value="open">Open Now</option>
+            <option value="near">Within 3 km</option>
+        </select>
+
+    </div>
+
+
+    <div class="clinic-grid" id="clinicGrid">
+
+        <div class="clinic-card" data-name="green paws veterinary hospital" data-distance="1.2">
+
+            <div class="clinic-top">
+                <div class="clinic-icon">🏥</div>
+                <span class="open-badge">● Open</span>
+            </div>
+
+            <h3>Green Paws Veterinary Hospital</h3>
+
+            <div class="rating">
+                ⭐ 4.8 <span>(324 reviews)</span>
+            </div>
+
+            <p>📍 1.2 km away</p>
+            <p>🕙 Open until 9:00 PM</p>
+
+            <div class="clinic-buttons">
+                <button onclick="callClinic('Green Paws Veterinary Hospital')">
+                    📞 Call
+                </button>
+
+                <button onclick="showDirections('Green Paws Veterinary Hospital')">
+                    🧭 Directions
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="clinic-card" data-name="petcare animal hospital" data-distance="2.4">
+
+            <div class="clinic-top">
+                <div class="clinic-icon">🏥</div>
+                <span class="open-badge">● Open</span>
+            </div>
+
+            <h3>PetCare Animal Hospital</h3>
+
+            <div class="rating">
+                ⭐ 4.7 <span>(218 reviews)</span>
+            </div>
+
+            <p>📍 2.4 km away</p>
+            <p>🕙 Open until 8:00 PM</p>
+
+            <div class="clinic-buttons">
+                <button onclick="callClinic('PetCare Animal Hospital')">
+                    📞 Call
+                </button>
+
+                <button onclick="showDirections('PetCare Animal Hospital')">
+                    🧭 Directions
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="clinic-card" data-name="happy tails veterinary clinic" data-distance="3.1">
+
+            <div class="clinic-top">
+                <div class="clinic-icon">🏥</div>
+                <span class="closed-badge">● Closed</span>
+            </div>
+
+            <h3>Happy Tails Veterinary Clinic</h3>
+
+            <div class="rating">
+                ⭐ 4.6 <span>(187 reviews)</span>
+            </div>
+
+            <p>📍 3.1 km away</p>
+            <p>🕙 Opens tomorrow at 8:00 AM</p>
+
+            <div class="clinic-buttons">
+                <button onclick="callClinic('Happy Tails Veterinary Clinic')">
+                    📞 Call
+                </button>
+
+                <button onclick="showDirections('Happy Tails Veterinary Clinic')">
+                    🧭 Directions
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PET SHOP ================= -->
+<section class="section shop-section" id="shop">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-label">PET ESSENTIALS</span>
+            <h2>🛒 Pet Food & Products</h2>
+            <p>Healthy food and everyday essentials for your pets.</p>
+        </div>
+
+        <button class="outline-btn" onclick="viewCart()">
+            🛒 Cart <span id="cartCount">0</span>
+        </button>
+
+    </div>
+
+
+    <div class="category-buttons">
+
+        <button class="category active" onclick="filterProducts('all', this)">
+            All
+        </button>
+
+        <button class="category" onclick="filterProducts('food', this)">
+            🍖 Food
+        </button>
+
+        <button class="category" onclick="filterProducts('treats', this)">
+            🦴 Treats
+        </button>
+
+        <button class="category" onclick="filterProducts('health', this)">
+            💊 Health
+        </button>
+
+        <button class="category" onclick="filterProducts('toys', this)">
+            🧸 Toys
+        </button>
+
+    </div>
+
+
+    <div class="product-grid">
+
+        <div class="product-card" data-category="food">
+
+            <div class="product-image">
+                🍖
+                <span>BESTSELLER</span>
+            </div>
+
+            <div class="product-info">
+                <small>Dog Food</small>
+                <h3>Premium Adult Dog Food</h3>
+                <p>Complete nutrition for adult dogs</p>
+
+                <div class="product-bottom">
+                    <strong>₹1,299</strong>
+                    <button onclick="addToCart('Premium Adult Dog Food')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="product-card" data-category="food">
+
+            <div class="product-image blue-product">
+                🥣
+            </div>
+
+            <div class="product-info">
+                <small>Cat Food</small>
+                <h3>Healthy Cat Nutrition</h3>
+                <p>Balanced nutrition for adult cats</p>
+
+                <div class="product-bottom">
+                    <strong>₹899</strong>
+                    <button onclick="addToCart('Healthy Cat Nutrition')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="product-card" data-category="treats">
+
+            <div class="product-image orange-product">
+                🦴
+            </div>
+
+            <div class="product-info">
+                <small>Treats</small>
+                <h3>Dental Care Chews</h3>
+                <p>Helps maintain healthy teeth</p>
+
+                <div class="product-bottom">
+                    <strong>₹349</strong>
+                    <button onclick="addToCart('Dental Care Chews')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="product-card" data-category="health">
+
+            <div class="product-image purple-product">
+                💊
+            </div>
+
+            <div class="product-info">
+                <small>Supplements</small>
+                <h3>Joint Care Supplement</h3>
+                <p>Daily support for active pets</p>
+
+                <div class="product-bottom">
+                    <strong>₹699</strong>
+                    <button onclick="addToCart('Joint Care Supplement')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="product-card" data-category="toys">
+
+            <div class="product-image green-product">
+                🧸
+            </div>
+
+            <div class="product-info">
+                <small>Toys</small>
+                <h3>Interactive Chew Toy</h3>
+                <p>Fun and engaging for dogs</p>
+
+                <div class="product-bottom">
+                    <strong>₹499</strong>
+                    <button onclick="addToCart('Interactive Chew Toy')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+<section class="cta">
+
+    <div>
+        <span class="section-label">PETCARE</span>
+        <h2>Your pet's health deserves the best care. 🐾</h2>
+        <p>Everything from appointments to nutrition, in one place.</p>
+    </div>
+
+    <button class="white-btn" onclick="openAppointment()">
+        🩺 Book a Vet Visit
+    </button>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+            <div class="logo">
+                <span class="logo-icon">🐾</span>
+                <span>Pet<span>Care</span></span>
+            </div>
+
+            <p>
+                Complete healthcare and wellness platform
+                for your beloved pets.
+            </p>
+        </div>
+
+        <div>
+            <h4>PetCare</h4>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#pets">My Pets</a>
+            <a href="#health">Health Records</a>
+            <a href="#appointments">Appointments</a>
+        </div>
+
+        <div>
+            <h4>Services</h4>
+            <a href="#clinics">Veterinary Clinics</a>
+            <a href="#shop">Pet Food</a>
+            <a href="#shop">Pet Products</a>
+            <a href="#health">Health Care</a>
+        </div>
+
+        <div>
+            <h4>Support</h4>
+            <a href="#" onclick="showMessage('Help Center opened!'); return false;">
+                Help Center
+            </a>
+            <a href="#" onclick="showMessage('Contact support opened!'); return false;">
+                Contact Us
+            </a>
+            <a href="#" onclick="showMessage('Privacy Policy opened!'); return false;">
+                Privacy Policy
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 PetCare. Pet healthcare made simple.</span>
+        <span>Made with 🐾 for every pet parent.</span>
+    </div>
+
+</footer>
+
+
+<!-- ================= MODAL ================= -->
+<div class="modal-overlay" id="modalOverlay">
+
+    <div class="modal" id="modalBox">
+
+        <button class="modal-close" onclick="closeModal()">×</button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

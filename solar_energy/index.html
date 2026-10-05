@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoPulse | Smart Solar Energy</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">☀</div>
+
+        <div>
+            <h2>EcoPulse</h2>
+            <span>SMART ENERGY OS</span>
+        </div>
+    </div>
+
+    <nav>
+
+        <button class="nav-item active" data-page="dashboard">
+            <span>⌂</span>
+            Dashboard
+        </button>
+
+        <button class="nav-item" data-page="solar">
+            <span>☀</span>
+            Solar Panels
+        </button>
+
+        <button class="nav-item" data-page="analytics">
+            <span>◒</span>
+            Energy Analytics
+        </button>
+
+        <button class="nav-item" data-page="forecast">
+            <span>✦</span>
+            AI Forecast
+            <small>NEW</small>
+        </button>
+
+        <button class="nav-item" data-page="battery">
+            <span>▣</span>
+            Battery
+        </button>
+
+        <button class="nav-item" data-page="alerts">
+            <span>!</span>
+            Alerts
+            <b id="alertCount">3</b>
+        </button>
+
+        <button class="nav-item" data-page="settings">
+            <span>⚙</span>
+            Settings
+        </button>
+
+    </nav>
+
+    <div class="sidebar-status">
+
+        <p>SYSTEM STATUS</p>
+
+        <div>
+            <span class="online-dot"></span>
+            All systems normal
+        </div>
+
+        <small>EcoPulse v2.0</small>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+            <div>
+                <p class="greeting">Good morning 👋</p>
+                <h1 id="pageTitle">Smart Energy Dashboard</h1>
+            </div>
+
+        </div>
+
+        <div class="top-actions">
+
+            <button class="top-btn" id="themeBtn">
+                ◐
+            </button>
+
+            <button class="top-btn" id="aiBtn">
+                ✦
+            </button>
+
+            <div class="avatar">
+                KB
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section class="page active" id="dashboard">
+
+        <div class="hero">
+
+            <div>
+
+                <span class="hero-label">
+                    LIVE ENERGY INTELLIGENCE
+                </span>
+
+                <h2>
+                    Your home generated
+                    <strong>27% more clean energy</strong>
+                    today.
+                </h2>
+
+                <p>
+                    EcoPulse combines solar production,
+                    battery storage and consumption
+                    into one intelligent interface.
+                </p>
+
+            </div>
+
+            <button class="ai-button" id="openAI">
+                ✦ Ask EcoPulse AI
+            </button>
+
+        </div>
+
+
+        <!-- KPI CARDS -->
+
+        <div class="kpi-grid">
+
+            <div class="kpi-card">
+
+                <div class="kpi-top">
+                    <span>Energy Generated</span>
+                    <div class="kpi-icon">⚡</div>
+                </div>
+
+                <h2>24.8 kWh</h2>
+
+                <p class="green">
+                    ↑ 12.5%
+                    <span>vs yesterday</span>
+                </p>
+
+            </div>
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-top">
+                    <span>Energy Consumed</span>
+                    <div class="kpi-icon">⌂</div>
+                </div>
+
+                <h2>18.3 kWh</h2>
+
+                <p class="green">
+                    ↓ 4.2%
+                    <span>vs yesterday</span>
+                </p>
+
+            </div>
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-top">
+                    <span>Battery</span>
+                    <div class="kpi-icon">▣</div>
+                </div>
+
+                <h2 id="batteryPercent">
+                    78%
+                </h2>
+
+                <div class="progress">
+                    <div
+                        class="progress-bar"
+                        id="batteryProgress">
+                    </div>
+                </div>
+
+                <p>
+                    6.2 kWh available
+                </p>
+
+            </div>
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-top">
+                    <span>CO₂ Saved</span>
+                    <div class="kpi-icon">♧</div>
+                </div>
+
+                <h2>14.6 kg</h2>
+
+                <p class="green">
+                    Today
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHART + INTELLIGENCE -->
+
+        <div class="two-column">
+
+            <div class="panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <h3>Energy Production</h3>
+                        <p>Solar generation over time</p>
+                    </div>
+
+                    <select id="chartPeriod">
+                        <option>7 Days</option>
+                        <option>30 Days</option>
+                        <option>Year</option>
+                    </select>
+
+                </div>
+
+                <div class="chart-box">
+                    <canvas id="energyChart"></canvas>
+                </div>
+
+            </div>
+
+
+            <div class="panel intelligence">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <h3>Eco Intelligence</h3>
+                        <p>Live system interpretation</p>
+                    </div>
+
+                    <span class="live">
+                        ● LIVE
+                    </span>
+
+                </div>
+
+                <div class="score-circle">
+
+                    <strong>92</strong>
+
+                    <span>
+                        SYSTEM SCORE
+                    </span>
+
+                </div>
+
+                <div class="intel-line">
+                    <span>Solar efficiency</span>
+                    <b>92%</b>
+                </div>
+
+                <div class="intel-line">
+                    <span>Grid independence</span>
+                    <b>76%</b>
+                </div>
+
+                <div class="intel-line">
+                    <span>Clean energy ratio</span>
+                    <b>81%</b>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ENERGY FLOW -->
+
+        <div class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <h3>Live Energy Flow</h3>
+                    <p>Current system distribution</p>
+                </div>
+
+                <span class="live-badge">
+                    LIVE
+                </span>
+
+            </div>
+
+            <div class="energy-flow">
+
+                <div class="energy-node">
+
+                    <div class="node-icon solar">
+                        ☀
+                    </div>
+
+                    <strong>Solar</strong>
+
+                    <span>
+                        4.8 kW generating
+                    </span>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="energy-node">
+
+                    <div class="node-icon home">
+                        ⌂
+                    </div>
+
+                    <strong>Home</strong>
+
+                    <span>
+                        2.7 kW consuming
+                    </span>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="energy-node">
+
+                    <div class="node-icon battery">
+                        ▣
+                    </div>
+
+                    <strong>Battery</strong>
+
+                    <span>
+                        2.1 kW charging
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- AI + CARBON -->
+
+        <div class="three-column">
+
+            <div class="panel recommendation">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <h3>Smart Recommendation</h3>
+                        <p>Personalized energy action</p>
+                    </div>
+
+                    <span class="ai-label">
+                        ✦ AI
+                    </span>
+
+                </div>
+
+                <div class="recommendation-content">
+
+                    <div class="recommend-icon">
+                        ↗
+                    </div>
+
+                    <div>
+
+                        <strong id="recommendationText">
+                            Run high-load appliances
+                            between 11 AM–2 PM.
+                        </strong>
+
+                        <p>
+                            Solar production is expected
+                            to peak during this period.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="text-button"
+                    id="refreshRecommendation">
+
+                    Generate another insight →
+
+                </button>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <h3>Carbon Impact</h3>
+                        <p>This month</p>
+                    </div>
+                </div>
+
+                <div class="carbon-value">
+                    182.4
+                    <span>kg CO₂</span>
+                </div>
+
+                <div class="carbon-bar">
+                    <div></div>
+                </div>
+
+                <p class="carbon-message">
+                    Equivalent to planting
+                    <strong>8 trees</strong>.
+                </p>
+
+            </div>
+
+
+            <div class="panel anomaly">
+
+                <div class="panel-heading">
+                    <div>
+                        <h3>AI System Check</h3>
+                        <p>Automated anomaly detection</p>
+                    </div>
+                </div>
+
+                <div class="check-status">
+                    <span>✓</span>
+
+                    <div>
+                        <strong>No critical anomalies</strong>
+
+                        <p>
+                            System operating within
+                            expected parameters.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SOLAR ================= -->
+
+    <section class="page" id="solar">
+
+        <div class="section-heading">
+
+            <div>
+                <span>CONNECTED HARDWARE</span>
+                <h2>Solar Panels</h2>
+                <p>
+                    Monitor connected solar panels.
+                </p>
+            </div>
+
+            <button
+                class="primary-button"
+                id="refreshPanels">
+
+                ↻ Refresh
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="panel-grid"
+            id="panelGrid">
+        </div>
+
+    </section>
+
+
+    <!-- ================= ANALYTICS ================= -->
+
+    <section class="page" id="analytics">
+
+        <div class="section-heading">
+
+            <div>
+                <span>DATA EXPLORER</span>
+                <h2>Energy Analytics</h2>
+                <p>
+                    Compare generation and consumption.
+                </p>
+            </div>
+
+            <button
+                class="primary-button"
+                id="exportReport">
+
+                ↓ Export Report
+
+            </button>
+
+        </div>
+
+
+        <div class="metric-grid">
+
+            <div class="metric-card">
+                <span>Monthly Generation</span>
+                <strong>684 kWh</strong>
+                <small>↑ 8.4%</small>
+            </div>
+
+            <div class="metric-card">
+                <span>Monthly Consumption</span>
+                <strong>512 kWh</strong>
+                <small>↓ 3.1%</small>
+            </div>
+
+            <div class="metric-card">
+                <span>Grid Independence</span>
+                <strong>76%</strong>
+                <small>↑ 5.7%</small>
+            </div>
+
+            <div class="metric-card">
+                <span>Solar Utilization</span>
+                <strong>88%</strong>
+                <small>↑ 6.2%</small>
+            </div>
+
+        </div>
+
+
+        <div class="panel large-chart">
+
+            <canvas id="analyticsChart"></canvas>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= AI FORECAST ================= -->
+
+    <section class="page" id="forecast">
+
+        <div class="section-heading">
+
+            <div>
+                <span>PREDICTIVE ENERGY</span>
+
+                <h2>
+                    AI Energy Forecast
+                </h2>
+
+                <p>
+                    Predict solar production
+                    and energy demand.
+                </p>
+            </div>
+
+            <span class="forecast-status">
+                ✦ MODEL UPDATED 2 MIN AGO
+            </span>
+
+        </div>
+
+
+        <div class="forecast-grid">
+
+            <div class="panel large-chart">
+
+                <canvas id="forecastChart"></canvas>
+
+            </div>
+
+
+            <div class="forecast-cards">
+
+                <div class="forecast-card">
+                    <span>Tomorrow</span>
+                    <strong>31.2 kWh</strong>
+                    <small>High solar potential</small>
+                </div>
+
+                <div class="forecast-card">
+                    <span>7-Day Average</span>
+                    <strong>28.6 kWh</strong>
+                    <small>↑ 9.8% vs last week</small>
+                </div>
+
+                <div class="forecast-card">
+                    <span>AI Confidence</span>
+                    <strong>94%</strong>
+                    <small>Weather + historical data</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="ai-insight">
+
+            <span>✦ AI INSIGHT</span>
+
+            <strong>
+                Tomorrow afternoon is the best
+                window for battery charging and
+                flexible appliance usage.
+            </strong>
+
+            <p>
+                Forecast is an illustrative interface
+                model for this UI template.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BATTERY ================= -->
+
+    <section class="page" id="battery">
+
+        <div class="section-heading">
+
+            <div>
+                <span>ENERGY STORAGE</span>
+                <h2>Battery Management</h2>
+                <p>
+                    Monitor your home energy storage.
+                </p>
+            </div>
+
+            <button
+                class="primary-button"
+                id="chargeButton">
+
+                ⚡ Simulate Charge
+
+            </button>
+
+        </div>
+
+
+        <div class="battery-layout">
+
+            <div class="panel battery-main">
+
+                <div class="battery-circle">
+
+                    <strong id="bigBattery">
+                        78%
+                    </strong>
+
+                </div>
+
+                <h3>Home Battery</h3>
+
+                <p>
+                    6.2 kWh of 8 kWh available
+                </p>
+
+            </div>
+
+
+            <div class="panel battery-info">
+
+                <div>
+                    <span>Charging Status</span>
+                    <strong id="chargeStatus">
+                        Charging
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Input Power</span>
+                    <strong>2.1 kW</strong>
+                </div>
+
+                <div>
+                    <span>Estimated Full</span>
+                    <strong>48 minutes</strong>
+                </div>
+
+                <div>
+                    <span>Battery Health</span>
+                    <strong>96%</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ALERTS ================= -->
+
+    <section class="page" id="alerts">
+
+        <div class="section-heading">
+
+            <div>
+                <span>SYSTEM EVENTS</span>
+                <h2>Alerts & Notifications</h2>
+                <p>
+                    Review system notifications.
+                </p>
+            </div>
+
+            <button
+                class="primary-button"
+                id="clearAlerts">
+
+                ✓ Clear All
+
+            </button>
+
+        </div>
+
+
+        <div class="panel" id="alertList">
+
+            <div class="alert-item">
+
+                <div class="alert-icon warning">
+                    !
+                </div>
+
+                <div>
+                    <strong>
+                        Panel 08 temperature high
+                    </strong>
+
+                    <span>
+                        10 minutes ago · Check ventilation.
+                    </span>
+                </div>
+
+                <button class="dismiss">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="alert-item">
+
+                <div class="alert-icon success">
+                    ✓
+                </div>
+
+                <div>
+                    <strong>
+                        Battery reached 80%
+                    </strong>
+
+                    <span>
+                        35 minutes ago · Normal event.
+                    </span>
+                </div>
+
+                <button class="dismiss">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="alert-item">
+
+                <div class="alert-icon info">
+                    i
+                </div>
+
+                <div>
+                    <strong>
+                        System maintenance scheduled
+                    </strong>
+
+                    <span>
+                        Yesterday · Due next month.
+                    </span>
+                </div>
+
+                <button class="dismiss">
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SETTINGS ================= -->
+
+    <section class="page" id="settings">
+
+        <div class="section-heading">
+
+            <div>
+                <span>PREFERENCES</span>
+                <h2>Settings</h2>
+                <p>
+                    Customize your EcoPulse experience.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="panel settings">
+
+            <label>
+                <span>Dark Mode</span>
+                <input
+                    type="checkbox"
+                    id="darkMode">
+            </label>
+
+            <label>
+                <span>System Notifications</span>
+                <input
+                    type="checkbox"
+                    checked>
+            </label>
+
+            <label>
+                <span>Auto Refresh</span>
+                <input
+                    type="checkbox"
+                    checked>
+            </label>
+
+            <button
+                class="primary-button"
+                id="saveSettings">
+
+                Save Settings
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        EcoPulse • Smart Renewable Energy Interface • 2026
+    </footer>
+
+</main>
+
+
+<!-- ================= AI COPILOT ================= -->
+
+<div
+    class="ai-overlay"
+    id="aiOverlay">
+
+    <div class="ai-modal">
+
+        <button
+            class="close-ai"
+            id="closeAI">
+
+            ×
+
+        </button>
+
+
+        <div class="ai-header">
+
+            <div class="ai-logo">
+                ✦
+            </div>
+
+            <div>
+                <span>ECOPULSE AI</span>
+
+                <h2>
+                    Energy Copilot
+                </h2>
+
+                <p>
+                    Ask questions about your energy system.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="quick-questions">
+
+            <button>
+                Why is my battery charging?
+            </button>
+
+            <button>
+                How can I reduce grid usage?
+            </button>
+
+            <button>
+                When should I use appliances?
+            </button>
+
+        </div>
+
+
+        <div
+            class="chat"
+            id="chat">
+
+            <div class="message ai">
+                Hi! I can explain your energy
+                dashboard and suggest energy-saving
+                actions.
+            </div>
+
+        </div>
+
+
+        <div class="chat-input">
+
+            <input
+                id="aiInput"
+                placeholder="Ask about your energy...">
+
+            <button id="sendAI">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div
+    class="toast"
+    id="toast">
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
