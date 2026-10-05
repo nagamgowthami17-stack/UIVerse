@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Online Course Platform</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../dashboard-polish.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="side">
+        <div class="brand">
+          <span class="brand-mark">S</span><span>SkillUp</span>
+        </div>
+        <div class="nav-label">Explore</div>
+        <a class="active"
+          ><span class="nav-icon">⌕</span><span>Explore Courses</span></a
+        ><a><span class="nav-icon">▣</span><span>My Learning</span></a
+        ><a><span class="nav-icon">♡</span><span>Wishlist</span></a
+        ><a><span class="nav-icon">🏆</span><span>Certificates</span></a
+        ><a><span class="nav-icon">♟</span><span>Instructors</span></a>
+        <div class="nav-label">Account</div>
+        <a><span class="nav-icon">⚙</span><span>Settings</span></a
+        ><a href="../../index.html"
+          ><span class="nav-icon">←</span><span>All Apps</span></a
+        >
+      </aside>
+      <main class="main">
+        <header class="top">
+          <div>
+            <p class="eyebrow">SkillUp Academy · Learn from anywhere</p>
+            <h1>Explore top courses</h1>
+          </div>
+          <div class="profile">
+            <div class="avatar">AN</div>
+            <b>My Account</b>
+          </div>
+        </header>
+        <section class="hero-card">
+          <div class="row">
+            <div>
+              <span class="pill" style="background: #ffffff22; color: #fff"
+                >CURATED FOR YOU</span
+              >
+              <h2>Build skills that move you forward</h2>
+              <p>
+                Learn from industry experts with practical, career-focused
+                courses.
+              </p>
+            </div>
+            <div style="font-size: 52px">🎓</div>
+          </div>
+          <div class="search" style="margin-top: 18px">
+            <input
+              id="search"
+              placeholder="Search courses, skills, instructors..."
+            /><button class="btn" onclick="filterCourses()">
+              Search Courses
+            </button>
+          </div>
+        </section>
+        <div class="row" style="margin: 22px 0 12px">
+          <div>
+            <h2 style="margin: 0">Popular categories</h2>
+            <p class="muted" style="margin: 5px 0">
+              Find the right path for your goals
+            </p>
+          </div>
+        </div>
+        <div class="chips" style="margin-bottom: 18px">
+          <button class="chip active" onclick="setCat('All', this)">
+            All Courses</button
+          ><button class="chip" onclick="setCat('Development', this)">
+            Development</button
+          ><button class="chip" onclick="setCat('Design', this)">Design</button
+          ><button class="chip" onclick="setCat('Business', this)">
+            Business</button
+          ><button class="chip" onclick="setCat('Data', this)">
+            Data Science
+          </button>
+        </div>
+        <section class="grid three" id="courses">
+          <article
+            class="card course course-card"
+            data-cat="Development"
+            data-name="web development"
+          >
+            <div class="course-banner"></div>
+            <span class="pill">Development</span>
+            <h3>Modern Web Development</h3>
+            <p class="muted">HTML · CSS · JavaScript · 24 hours</p>
+            <p>⭐ <b>4.9</b> · 12k learners</p>
+            <div class="row">
+              <div>
+                <b>₹799</b><br /><small class="muted"
+                  >Certificate included</small
+                >
+              </div>
+              <button class="btn" onclick="enroll('Modern Web Development')">
+                Enroll
+              </button>
+            </div>
+          </article>
+          <article
+            class="card course course-card"
+            data-cat="Development"
+            data-name="java programming"
+          >
+            <div class="course-banner two-tone"></div>
+            <span class="pill">Development</span>
+            <h3>Java Programming Masterclass</h3>
+            <p class="muted">Java · OOP · DSA · 32 hours</p>
+            <p>⭐ <b>4.8</b> · 8.4k learners</p>
+            <div class="row">
+              <div>
+                <b>₹999</b><br /><small class="muted"
+                  >Certificate included</small
+                >
+              </div>
+              <button
+                class="btn"
+                onclick="enroll('Java Programming Masterclass')"
+              >
+                Enroll
+              </button>
+            </div>
+          </article>
+          <article
+            class="card course course-card"
+            data-cat="Design"
+            data-name="ui ux design"
+          >
+            <div class="course-banner pink"></div>
+            <span class="pill">Design</span>
+            <h3>UI/UX Design Essentials</h3>
+            <p class="muted">Figma · UX · Prototyping · 18 hours</p>
+            <p>⭐ <b>4.9</b> · 6.1k learners</p>
+            <div class="row">
+              <div>
+                <b>₹699</b><br /><small class="muted"
+                  >Certificate included</small
+                >
+              </div>
+              <button class="btn" onclick="enroll('UI/UX Design Essentials')">
+                Enroll
+              </button>
+            </div>
+          </article>
+          <article
+            class="card course course-card"
+            data-cat="Business"
+            data-name="digital marketing"
+          >
+            <div class="course-banner orange"></div>
+            <span class="pill">Business</span>
+            <h3>Digital Marketing Strategy</h3>
+            <p class="muted">SEO · Ads · Analytics · 20 hours</p>
+            <p>⭐ <b>4.7</b> · 5.8k learners</p>
+            <div class="row">
+              <div>
+                <b>₹899</b><br /><small class="muted"
+                  >Certificate included</small
+                >
+              </div>
+              <button
+                class="btn"
+                onclick="enroll('Digital Marketing Strategy')"
+              >
+                Enroll
+              </button>
+            </div>
+          </article>
+          <article
+            class="card course course-card"
+            data-cat="Data"
+            data-name="python data science"
+          >
+            <div class="course-banner two-tone"></div>
+            <span class="pill">Data Science</span>
+            <h3>Python for Data Science</h3>
+            <p class="muted">Python · NumPy · Pandas · 28 hours</p>
+            <p>⭐ <b>4.9</b> · 15k learners</p>
+            <div class="row">
+              <div>
+                <b>₹1,099</b><br /><small class="muted"
+                  >Certificate included</small
+                >
+              </div>
+              <button class="btn" onclick="enroll('Python for Data Science')">
+                Enroll
+              </button>
+            </div>
+          </article>
+          <article
+            class="card course course-card"
+            data-cat="Design"
+            data-name="graphic design"
+          >
+            <div class="course-banner pink"></div>
+            <span class="pill">Design</span>
+            <h3>Graphic Design Bootcamp</h3>
+            <p class="muted">Typography · Branding · 16 hours</p>
+            <p>⭐ <b>4.8</b> · 4.2k learners</p>
+            <div class="row">
+              <div>
+                <b>₹749</b><br /><small class="muted"
+                  >Certificate included</small
+                >
+              </div>
+              <button class="btn" onclick="enroll('Graphic Design Bootcamp')">
+                Enroll
+              </button>
+            </div>
+          </article>
+        </section>
+        <div id="empty" class="empty">
+          No courses found. Try another category or search term.
+        </div>
+        <section class="panel" style="margin-top: 22px">
+          <div class="row">
+            <div>
+              <h2>Why learn with SkillUp?</h2>
+              <p class="muted">
+                Everything you need to learn, practice and prove your skills.
+              </p>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <div class="feature">
+              <b>🎯 Project-based</b>
+              <p class="muted">Build practical portfolio projects.</p>
+            </div>
+            <div class="feature">
+              <b>👨‍🏫 Expert instructors</b>
+              <p class="muted">Learn from experienced professionals.</p>
+            </div>
+            <div class="feature">
+              <b>🏆 Certificates</b>
+              <p class="muted">Earn certificates after completion.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
