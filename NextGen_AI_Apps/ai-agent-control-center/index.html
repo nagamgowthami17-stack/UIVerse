@@ -1,7 +1,217 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Agent Control Center</title><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="brand">agent<span>OS</span></div><div class="search">⌕ Search agents, tasks, logs...</div><div class="user">G</div></header>
-<div class="shell"><aside><div class="nav active">▦ Overview</div><div class="nav">◉ Agents</div><div class="nav">↗ Runs</div><div class="nav">☷ Workflows</div><div class="nav">◌ Approvals <em>2</em></div><div class="nav">⚙ Settings</div><div class="sidebottom">Workspace<br><b>My AI Lab</b></div></aside>
-<main><div class="title"><div><small>OPERATIONS</small><h1>Agent control center</h1></div><button id="runAll">Run active agents</button></div>
-<section class="metrics"><div><small>ACTIVE AGENTS</small><b>12</b><span>↑ 3 this week</span></div><div><small>RUNS TODAY</small><b>248</b><span>↑ 18.4%</span></div><div><small>SUCCESS RATE</small><b>96.8%</b><span>↑ 1.2%</span></div><div><small>NEEDS REVIEW</small><b>2</b><span>Human approval</span></div></section>
-<div class="columns"><section class="panel"><div class="panelhead"><h2>Agents</h2><select id="filter"><option>All status</option><option>Running</option><option>Idle</option><option>Review</option></select></div><div id="agents"><article class="agent"><span class="status run"></span><div><b>Research Scout</b><small>Collects and summarizes sources</small></div><label>Running</label><button class="stop">Stop</button></article><article class="agent"><span class="status idle"></span><div><b>Data Cleaner</b><small>Validates incoming datasets</small></div><label>Idle</label><button class="stop">Run</button></article><article class="agent"><span class="status review"></span><div><b>Release Analyst</b><small>Reviews deployment changes</small></div><label>Review</label><button class="stop">Approve</button></article><article class="agent"><span class="status run"></span><div><b>Support Copilot</b><small>Drafts customer responses</small></div><label>Running</label><button class="stop">Stop</button></article></div></section>
-<section class="panel"><div class="panelhead"><h2>Live activity</h2><span class="live">● LIVE</span></div><div class="timeline"><p><b>Research Scout</b> completed source scan <small>just now</small></p><p><b>Support Copilot</b> drafted 4 responses <small>2 min ago</small></p><p><b>Release Analyst</b> requested approval <small>5 min ago</small></p><p><b>Data Cleaner</b> finished validation <small>9 min ago</small></p></div><div class="queue"><small>NEXT IN QUEUE</small><b>Analyze Q3 customer feedback</b><span>Research Scout · estimated 3m</span></div></section></div></main></div><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Agent Control Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="brand">agent<span>OS</span></div>
+
+  <input
+    id="agentSearch"
+    class="search"
+    type="text"
+    placeholder="⌕ Search agents, tasks, logs..."
+  >
+
+  <div class="user">G</div>
+</header>
+
+<div class="shell">
+
+  <aside>
+
+    <div class="nav active" data-section="Overview">▦ Overview</div>
+    <div class="nav" data-section="Agents">◉ Agents</div>
+    <div class="nav" data-section="Runs">↗ Runs</div>
+    <div class="nav" data-section="Workflows">☷ Workflows</div>
+
+    <div class="nav" data-section="Approvals">
+      ◌ Approvals <em id="approvalCount">2</em>
+    </div>
+
+    <div class="nav" data-section="Settings">⚙ Settings</div>
+
+    <div class="sidebottom">
+      Workspace<br>
+      <b>My AI Lab</b>
+    </div>
+
+  </aside>
+
+  <main>
+
+    <div class="title">
+      <div>
+        <small>OPERATIONS</small>
+        <h1>Agent control center</h1>
+      </div>
+
+      <button id="runAll">Run active agents</button>
+    </div>
+
+    <section class="metrics">
+
+      <div>
+        <small>ACTIVE AGENTS</small>
+        <b id="activeAgents">2</b>
+        <span>↑ 3 this week</span>
+      </div>
+
+      <div>
+        <small>RUNS TODAY</small>
+        <b id="runsToday">248</b>
+        <span>↑ 18.4%</span>
+      </div>
+
+      <div>
+        <small>SUCCESS RATE</small>
+        <b>96.8%</b>
+        <span>↑ 1.2%</span>
+      </div>
+
+      <div>
+        <small>NEEDS REVIEW</small>
+        <b id="needsReview">1</b>
+        <span>Human approval</span>
+      </div>
+
+    </section>
+
+    <div class="columns">
+
+      <section class="panel">
+
+        <div class="panelhead">
+          <h2>Agents</h2>
+
+          <select id="filter">
+            <option>All status</option>
+            <option>Running</option>
+            <option>Idle</option>
+            <option>Review</option>
+          </select>
+        </div>
+
+        <div id="agents">
+
+          <article class="agent" data-name="Research Scout">
+            <span class="status run"></span>
+
+            <div>
+              <b>Research Scout</b>
+              <small>Collects and summarizes sources</small>
+            </div>
+
+            <label>Running</label>
+
+            <button class="stop">Stop</button>
+          </article>
+
+
+          <article class="agent" data-name="Data Cleaner">
+            <span class="status idle"></span>
+
+            <div>
+              <b>Data Cleaner</b>
+              <small>Validates incoming datasets</small>
+            </div>
+
+            <label>Idle</label>
+
+            <button class="stop">Run</button>
+          </article>
+
+
+          <article class="agent" data-name="Release Analyst">
+            <span class="status review"></span>
+
+            <div>
+              <b>Release Analyst</b>
+              <small>Reviews deployment changes</small>
+            </div>
+
+            <label>Review</label>
+
+            <button class="stop">Approve</button>
+          </article>
+
+
+          <article class="agent" data-name="Support Copilot">
+            <span class="status run"></span>
+
+            <div>
+              <b>Support Copilot</b>
+              <small>Drafts customer responses</small>
+            </div>
+
+            <label>Running</label>
+
+            <button class="stop">Stop</button>
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <section class="panel">
+
+        <div class="panelhead">
+          <h2>Live activity</h2>
+          <span class="live">● LIVE</span>
+        </div>
+
+        <div id="timeline" class="timeline">
+
+          <p>
+            <b>Research Scout</b> completed source scan
+            <small>just now</small>
+          </p>
+
+          <p>
+            <b>Support Copilot</b> drafted 4 responses
+            <small>2 min ago</small>
+          </p>
+
+          <p>
+            <b>Release Analyst</b> requested approval
+            <small>5 min ago</small>
+          </p>
+
+          <p>
+            <b>Data Cleaner</b> finished validation
+            <small>9 min ago</small>
+          </p>
+
+        </div>
+
+        <div class="queue">
+
+          <small>NEXT IN QUEUE</small>
+
+          <b>Analyze Q3 customer feedback</b>
+
+          <span>
+            Research Scout · estimated 3m
+          </span>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
