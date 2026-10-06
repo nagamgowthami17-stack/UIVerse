@@ -1,241 +1,799 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Doctor Appointment & Booking</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../../dashboard-polish.css" />
-  </head>
-  <body>
-    <div class="app">
-      <aside class="side">
-        <div class="brand">
-          <span class="brand-mark">✚</span><span>MediBook</span>
-        </div>
-        <div class="nav-label">Discover</div>
-        <a class="active"
-          ><span class="nav-icon">⌕</span><span>Find Doctor</span></a
-        ><a><span class="nav-icon">◷</span><span>Appointments</span></a
-        ><a><span class="nav-icon">▣</span><span>Health Records</span></a
-        ><a><span class="nav-icon">✉</span><span>Messages</span></a>
-        <div class="nav-label">Account</div>
-        <a><span class="nav-icon">⚙</span><span>Settings</span></a
-        ><a href="../../index.html"
-          ><span class="nav-icon">←</span><span>All Apps</span></a
-        >
-      </aside>
-      <main class="main">
-        <header class="top">
-          <div>
-            <p class="eyebrow">Healthcare network · 120+ specialists</p>
-            <h1>Find the right doctor</h1>
-          </div>
-          <div class="profile">
-            <div class="avatar">AS</div>
-            <b>Alex</b>
-          </div>
-        </header>
-        <section class="hero-card">
-          <span class="pill" style="background: #ffffff22; color: #fff"
-            >SMART SEARCH</span
-          >
-          <h2>Book trusted care in minutes</h2>
-          <p>
-            Search specialists, compare ratings, choose a convenient time and
-            confirm your visit.
-          </p>
-          <div class="search" style="margin-top: 18px">
-            <input
-              id="search"
-              placeholder="Search doctor, specialty or hospital..."
-            /><button class="btn" onclick="filterDoctors()">
-              Search Doctors
-            </button>
-          </div>
-        </section>
-        <div class="row" style="margin: 20px 0 12px">
-          <div>
-            <h2 style="margin: 0">Recommended specialists</h2>
-            <p class="muted" style="margin: 5px 0">
-              Available for online and in-clinic consultations
-            </p>
-          </div>
-        </div>
-        <div class="chips" style="margin-bottom: 16px">
-          <button class="chip active" onclick="setSpec('All', this)">All</button
-          ><button class="chip" onclick="setSpec('Cardiology', this)">
-            Cardiology</button
-          ><button class="chip" onclick="setSpec('Dermatology', this)">
-            Dermatology</button
-          ><button class="chip" onclick="setSpec('Pediatrics', this)">
-            Pediatrics</button
-          ><button class="chip" onclick="setSpec('Neurology', this)">
-            Neurology
-          </button>
-        </div>
-        <section class="grid three" id="doctors">
-          <article
-            class="card doctor doctor-card"
-            data-spec="Cardiology"
-            data-name="maya rao cardiology"
-          >
-            <div class="row">
-              <div class="avatar">MR</div>
-              <span class="good">● Available today</span>
-            </div>
-            <h3>Dr. Maya Rao</h3>
-            <p class="muted">Cardiologist · 12 years experience</p>
-            <p>⭐ <b>4.9</b> · 128 reviews · ₹700</p>
-            <div class="feature-grid">
-              <div class="feature">📹 Video</div>
-              <div class="feature">🏥 Clinic</div>
-              <div class="feature">30 min</div>
-            </div>
-            <button
-              class="btn"
-              style="width: 100%; margin-top: 16px"
-              onclick="openBooking('Dr. Maya Rao', 'Cardiology')"
-            >
-              Book Appointment
-            </button>
-          </article>
-          <article
-            class="card doctor doctor-card"
-            data-spec="Dermatology"
-            data-name="arjun kumar dermatology"
-          >
-            <div class="row">
-              <div class="avatar">AK</div>
-              <span class="good">● Available today</span>
-            </div>
-            <h3>Dr. Arjun Kumar</h3>
-            <p class="muted">Dermatologist · 9 years experience</p>
-            <p>⭐ <b>4.8</b> · 96 reviews · ₹600</p>
-            <div class="feature-grid">
-              <div class="feature">📹 Video</div>
-              <div class="feature">🏥 Clinic</div>
-              <div class="feature">30 min</div>
-            </div>
-            <button
-              class="btn"
-              style="width: 100%; margin-top: 16px"
-              onclick="openBooking('Dr. Arjun Kumar', 'Dermatology')"
-            >
-              Book Appointment
-            </button>
-          </article>
-          <article
-            class="card doctor doctor-card"
-            data-spec="Pediatrics"
-            data-name="nisha patel pediatrics"
-          >
-            <div class="row">
-              <div class="avatar">NP</div>
-              <span class="good">● Available today</span>
-            </div>
-            <h3>Dr. Nisha Patel</h3>
-            <p class="muted">Pediatrician · 11 years experience</p>
-            <p>⭐ <b>4.9</b> · 143 reviews · ₹650</p>
-            <div class="feature-grid">
-              <div class="feature">📹 Video</div>
-              <div class="feature">🏥 Clinic</div>
-              <div class="feature">30 min</div>
-            </div>
-            <button
-              class="btn"
-              style="width: 100%; margin-top: 16px"
-              onclick="openBooking('Dr. Nisha Patel', 'Pediatrics')"
-            >
-              Book Appointment
-            </button>
-          </article>
-          <article
-            class="card doctor doctor-card"
-            data-spec="Neurology"
-            data-name="rahul shah neurology"
-          >
-            <div class="row">
-              <div class="avatar">RS</div>
-              <span class="good">● Available tomorrow</span>
-            </div>
-            <h3>Dr. Rahul Shah</h3>
-            <p class="muted">Neurologist · 14 years experience</p>
-            <p>⭐ <b>4.8</b> · 110 reviews · ₹900</p>
-            <div class="feature-grid">
-              <div class="feature">📹 Video</div>
-              <div class="feature">🏥 Clinic</div>
-              <div class="feature">45 min</div>
-            </div>
-            <button
-              class="btn"
-              style="width: 100%; margin-top: 16px"
-              onclick="openBooking('Dr. Rahul Shah', 'Neurology')"
-            >
-              Book Appointment
-            </button>
-          </article>
-        </section>
-        <div id="empty" class="empty">
-          No doctors found. Try another specialty or search term.
-        </div>
-        <section class="panel" style="margin-top: 20px">
-          <div class="row">
-            <div>
-              <h2>Upcoming appointment</h2>
-              <p class="muted">Your next confirmed consultation</p>
-            </div>
-            <span class="pill">CONFIRMED</span>
-          </div>
-          <div class="item row">
-            <div>
-              <b id="upcomingDoctor">Dr. Maya Rao · Cardiology</b>
-              <p class="muted" id="upcomingDate">
-                Oct 08, 2026 · 10:30 AM · Video consultation
-              </p>
-            </div>
-            <button
-              class="btn light"
-              onclick="notify('Appointment details opened')"
-            >
-              View details
-            </button>
-          </div>
-        </section>
-      </main>
-    </div>
-    <div class="modal" id="modal">
-      <div class="modalbox">
-        <div class="row">
-          <h2>Book appointment</h2>
-          <button class="btn light" onclick="closeBooking()">✕</button>
-        </div>
-        <p id="doctorName" class="muted"></p>
-        <div class="field">
-          <label>Date</label><input id="date" type="date" />
-        </div>
-        <div class="field">
-          <label>Time slot</label
-          ><select id="time">
-            <option>10:30 AM</option>
-            <option>11:30 AM</option>
-            <option>2:00 PM</option>
-            <option>4:30 PM</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Consultation</label
-          ><select>
-            <option>Video consultation</option>
-            <option>In-clinic consultation</option>
-          </select>
-        </div>
-        <button class="btn" style="width: 100%" onclick="confirmBooking()">
-          Confirm Booking
-        </button>
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Doctor Appointment & Booking</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="../../dashboard-polish.css"
+  />
+
+</head>
+
+
+<body>
+
+  <div class="app">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="side">
+
+      <div class="brand">
+
+        <span class="brand-mark">
+          ✚
+        </span>
+
+        <span>
+          MediBook
+        </span>
+
       </div>
+
+
+      <div class="nav-label">
+        Discover
+      </div>
+
+
+      <a
+        href="#"
+        class="active"
+        onclick="selectMenu(this, 'Find Doctor'); return false;"
+      >
+
+        <span class="nav-icon">
+          ⌕
+        </span>
+
+        <span>
+          Find Doctor
+        </span>
+
+      </a>
+
+
+      <a
+        href="#upcoming"
+        onclick="selectMenu(this, 'Appointments'); return false;"
+      >
+
+        <span class="nav-icon">
+          ◷
+        </span>
+
+        <span>
+          Appointments
+        </span>
+
+      </a>
+
+
+      <a
+        href="#"
+        onclick="selectMenu(this, 'Health Records'); return false;"
+      >
+
+        <span class="nav-icon">
+          ▣
+        </span>
+
+        <span>
+          Health Records
+        </span>
+
+      </a>
+
+
+      <a
+        href="#"
+        onclick="selectMenu(this, 'Messages'); return false;"
+      >
+
+        <span class="nav-icon">
+          ✉
+        </span>
+
+        <span>
+          Messages
+        </span>
+
+      </a>
+
+
+      <div class="nav-label">
+        Account
+      </div>
+
+
+      <a
+        href="#"
+        onclick="selectMenu(this, 'Settings'); return false;"
+      >
+
+        <span class="nav-icon">
+          ⚙
+        </span>
+
+        <span>
+          Settings
+        </span>
+
+      </a>
+
+
+      <a href="../../index.html">
+
+        <span class="nav-icon">
+          ←
+        </span>
+
+        <span>
+          All Apps
+        </span>
+
+      </a>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+      <!-- HEADER -->
+
+      <header class="top">
+
+        <div>
+
+          <p class="eyebrow">
+            Healthcare network · 120+ specialists
+          </p>
+
+          <h1>
+            Find the right doctor
+          </h1>
+
+        </div>
+
+
+        <div class="profile">
+
+          <div class="avatar">
+            AS
+          </div>
+
+          <b>
+            Alex
+          </b>
+
+        </div>
+
+      </header>
+
+
+
+      <!-- ================= SEARCH HERO ================= -->
+
+      <section class="hero-card">
+
+        <span
+          class="pill"
+          style="background:#ffffff22;color:#fff"
+        >
+          SMART SEARCH
+        </span>
+
+
+        <h2>
+          Book trusted care in minutes
+        </h2>
+
+
+        <p>
+          Search specialists, compare ratings, choose a convenient time
+          and confirm your visit.
+        </p>
+
+
+        <div
+          class="search"
+          style="margin-top:18px"
+        >
+
+          <input
+            id="search"
+            type="text"
+            placeholder="Search doctor, specialty or hospital..."
+            autocomplete="off"
+          />
+
+
+          <button
+            class="btn"
+            onclick="filterDoctors()"
+          >
+            Search Doctors
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= SPECIALISTS ================= -->
+
+      <div
+        class="row"
+        style="margin:20px 0 12px"
+      >
+
+        <div>
+
+          <h2 style="margin:0">
+            Recommended specialists
+          </h2>
+
+          <p
+            class="muted"
+            style="margin:5px 0"
+          >
+            Available for online and in-clinic consultations
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- FILTERS -->
+
+      <div
+        class="chips"
+        style="margin-bottom:16px"
+      >
+
+        <button
+          class="chip active"
+          onclick="setSpec('All', this)"
+        >
+          All
+        </button>
+
+
+        <button
+          class="chip"
+          onclick="setSpec('Cardiology', this)"
+        >
+          Cardiology
+        </button>
+
+
+        <button
+          class="chip"
+          onclick="setSpec('Dermatology', this)"
+        >
+          Dermatology
+        </button>
+
+
+        <button
+          class="chip"
+          onclick="setSpec('Pediatrics', this)"
+        >
+          Pediatrics
+        </button>
+
+
+        <button
+          class="chip"
+          onclick="setSpec('Neurology', this)"
+        >
+          Neurology
+        </button>
+
+      </div>
+
+
+
+      <!-- ================= DOCTOR CARDS ================= -->
+
+      <section
+        class="grid three"
+        id="doctors"
+      >
+
+
+        <!-- DOCTOR 1 -->
+
+        <article
+          class="card doctor doctor-card"
+          data-spec="Cardiology"
+          data-name="maya rao cardiology cardiologist"
+        >
+
+          <div class="row">
+
+            <div class="avatar">
+              MR
+            </div>
+
+            <span class="good">
+              ● Available today
+            </span>
+
+          </div>
+
+
+          <h3>
+            Dr. Maya Rao
+          </h3>
+
+
+          <p class="muted">
+            Cardiologist · 12 years experience
+          </p>
+
+
+          <p>
+            ⭐ <b>4.9</b> · 128 reviews · ₹700
+          </p>
+
+
+          <div class="feature-grid">
+
+            <div class="feature">
+              📹 Video
+            </div>
+
+            <div class="feature">
+              🏥 Clinic
+            </div>
+
+            <div class="feature">
+              30 min
+            </div>
+
+          </div>
+
+
+          <button
+            class="btn"
+            style="width:100%;margin-top:16px"
+            onclick="openBooking('Dr. Maya Rao', 'Cardiology')"
+          >
+            Book Appointment
+          </button>
+
+        </article>
+
+
+
+        <!-- DOCTOR 2 -->
+
+        <article
+          class="card doctor doctor-card"
+          data-spec="Dermatology"
+          data-name="arjun kumar dermatology dermatologist"
+        >
+
+          <div class="row">
+
+            <div class="avatar">
+              AK
+            </div>
+
+            <span class="good">
+              ● Available today
+            </span>
+
+          </div>
+
+
+          <h3>
+            Dr. Arjun Kumar
+          </h3>
+
+
+          <p class="muted">
+            Dermatologist · 9 years experience
+          </p>
+
+
+          <p>
+            ⭐ <b>4.8</b> · 96 reviews · ₹600
+          </p>
+
+
+          <div class="feature-grid">
+
+            <div class="feature">
+              📹 Video
+            </div>
+
+            <div class="feature">
+              🏥 Clinic
+            </div>
+
+            <div class="feature">
+              30 min
+            </div>
+
+          </div>
+
+
+          <button
+            class="btn"
+            style="width:100%;margin-top:16px"
+            onclick="openBooking('Dr. Arjun Kumar', 'Dermatology')"
+          >
+            Book Appointment
+          </button>
+
+        </article>
+
+
+
+        <!-- DOCTOR 3 -->
+
+        <article
+          class="card doctor doctor-card"
+          data-spec="Pediatrics"
+          data-name="nisha patel pediatrics pediatrician"
+        >
+
+          <div class="row">
+
+            <div class="avatar">
+              NP
+            </div>
+
+            <span class="good">
+              ● Available today
+            </span>
+
+          </div>
+
+
+          <h3>
+            Dr. Nisha Patel
+          </h3>
+
+
+          <p class="muted">
+            Pediatrician · 11 years experience
+          </p>
+
+
+          <p>
+            ⭐ <b>4.9</b> · 143 reviews · ₹650
+          </p>
+
+
+          <div class="feature-grid">
+
+            <div class="feature">
+              📹 Video
+            </div>
+
+            <div class="feature">
+              🏥 Clinic
+            </div>
+
+            <div class="feature">
+              30 min
+            </div>
+
+          </div>
+
+
+          <button
+            class="btn"
+            style="width:100%;margin-top:16px"
+            onclick="openBooking('Dr. Nisha Patel', 'Pediatrics')"
+          >
+            Book Appointment
+          </button>
+
+        </article>
+
+
+
+        <!-- DOCTOR 4 -->
+
+        <article
+          class="card doctor doctor-card"
+          data-spec="Neurology"
+          data-name="rahul shah neurology neurologist"
+        >
+
+          <div class="row">
+
+            <div class="avatar">
+              RS
+            </div>
+
+            <span class="good">
+              ● Available tomorrow
+            </span>
+
+          </div>
+
+
+          <h3>
+            Dr. Rahul Shah
+          </h3>
+
+
+          <p class="muted">
+            Neurologist · 14 years experience
+          </p>
+
+
+          <p>
+            ⭐ <b>4.8</b> · 110 reviews · ₹900
+          </p>
+
+
+          <div class="feature-grid">
+
+            <div class="feature">
+              📹 Video
+            </div>
+
+            <div class="feature">
+              🏥 Clinic
+            </div>
+
+            <div class="feature">
+              45 min
+            </div>
+
+          </div>
+
+
+          <button
+            class="btn"
+            style="width:100%;margin-top:16px"
+            onclick="openBooking('Dr. Rahul Shah', 'Neurology')"
+          >
+            Book Appointment
+          </button>
+
+        </article>
+
+      </section>
+
+
+
+      <!-- EMPTY SEARCH -->
+
+      <div
+        id="empty"
+        class="empty"
+      >
+        No doctors found.
+        Try another specialty or search term.
+      </div>
+
+
+
+      <!-- ================= UPCOMING APPOINTMENT ================= -->
+
+      <section
+        class="panel"
+        id="upcoming"
+        style="margin-top:20px"
+      >
+
+        <div class="row">
+
+          <div>
+
+            <h2>
+              Upcoming appointment
+            </h2>
+
+            <p class="muted">
+              Your next confirmed consultation
+            </p>
+
+          </div>
+
+
+          <span
+            class="pill"
+            id="appointmentStatus"
+          >
+            CONFIRMED
+          </span>
+
+        </div>
+
+
+        <div class="item row">
+
+          <div>
+
+            <b id="upcomingDoctor">
+              Dr. Maya Rao · Cardiology
+            </b>
+
+
+            <p
+              class="muted"
+              id="upcomingDate"
+            >
+              Oct 08, 2026 · 10:30 AM · Video consultation
+            </p>
+
+          </div>
+
+
+          <button
+            class="btn light"
+            onclick="viewAppointmentDetails()"
+          >
+            View details
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+
+  <!-- ================= BOOKING MODAL ================= -->
+
+  <div
+    class="modal"
+    id="modal"
+  >
+
+    <div class="modalbox">
+
+      <div class="row">
+
+        <h2>
+          Book appointment
+        </h2>
+
+
+        <button
+          class="btn light"
+          onclick="closeBooking()"
+          aria-label="Close booking window"
+        >
+          ✕
+        </button>
+
+      </div>
+
+
+      <p
+        id="doctorName"
+        class="muted"
+      ></p>
+
+
+
+      <div class="field">
+
+        <label for="date">
+          Date
+        </label>
+
+        <input
+          id="date"
+          type="date"
+        />
+
+      </div>
+
+
+
+      <div class="field">
+
+        <label for="time">
+          Time slot
+        </label>
+
+
+        <select id="time">
+
+          <option>
+            10:30 AM
+          </option>
+
+          <option>
+            11:30 AM
+          </option>
+
+          <option>
+            2:00 PM
+          </option>
+
+          <option>
+            4:30 PM
+          </option>
+
+        </select>
+
+      </div>
+
+
+
+      <div class="field">
+
+        <label for="consultation">
+          Consultation
+        </label>
+
+
+        <select id="consultation">
+
+          <option>
+            Video consultation
+          </option>
+
+          <option>
+            In-clinic consultation
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <button
+        class="btn"
+        style="width:100%"
+        onclick="confirmBooking()"
+      >
+        Confirm Booking
+      </button>
+
     </div>
-    <div id="toast" class="toast"></div>
-    <script src="script.js"></script>
-  </body>
+
+  </div>
+
+
+
+  <!-- TOAST -->
+
+  <div
+    id="toast"
+    class="toast"
+  ></div>
+
+
+  <script src="script.js"></script>
+
+</body>
+
 </html>
