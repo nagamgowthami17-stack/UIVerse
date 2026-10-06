@@ -1,249 +1,1170 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Online Course Platform</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../../dashboard-polish.css" />
-  </head>
-  <body>
-    <div class="app">
-      <aside class="side">
-        <div class="brand">
-          <span class="brand-mark">S</span><span>SkillUp</span>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Online Course Platform</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../dashboard-polish.css"
+  >
+
+</head>
+
+
+<body>
+
+  <div class="app">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="side">
+
+      <div class="brand">
+
+        <span class="brand-mark">
+          S
+        </span>
+
+        <span>
+          SkillUp
+        </span>
+
+      </div>
+
+
+      <div class="nav-label">
+        Explore
+      </div>
+
+
+      <a
+        href="#courses"
+        class="active"
+        onclick="selectMenu(this, 'Explore Courses'); return false;"
+      >
+
+        <span class="nav-icon">
+          ⌕
+        </span>
+
+        <span>
+          Explore Courses
+        </span>
+
+      </a>
+
+
+      <a
+        href="#learning"
+        onclick="selectMenu(this, 'My Learning'); return false;"
+      >
+
+        <span class="nav-icon">
+          ▣
+        </span>
+
+        <span>
+          My Learning
+        </span>
+
+      </a>
+
+
+      <a
+        href="#wishlist"
+        onclick="selectMenu(this, 'Wishlist'); return false;"
+      >
+
+        <span class="nav-icon">
+          ♡
+        </span>
+
+        <span>
+          Wishlist
+        </span>
+
+      </a>
+
+
+      <a
+        href="#certificates"
+        onclick="selectMenu(this, 'Certificates'); return false;"
+      >
+
+        <span class="nav-icon">
+          🏆
+        </span>
+
+        <span>
+          Certificates
+        </span>
+
+      </a>
+
+
+      <a
+        href="#instructors"
+        onclick="selectMenu(this, 'Instructors'); return false;"
+      >
+
+        <span class="nav-icon">
+          ♟
+        </span>
+
+        <span>
+          Instructors
+        </span>
+
+      </a>
+
+
+      <div class="nav-label">
+        Account
+      </div>
+
+
+      <a
+        href="#"
+        onclick="selectMenu(this, 'Settings'); return false;"
+      >
+
+        <span class="nav-icon">
+          ⚙
+        </span>
+
+        <span>
+          Settings
+        </span>
+
+      </a>
+
+
+      <a href="../../index.html">
+
+        <span class="nav-icon">
+          ←
+        </span>
+
+        <span>
+          All Apps
+        </span>
+
+      </a>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+      <!-- HEADER -->
+
+      <header class="top">
+
+        <div>
+
+          <p class="eyebrow">
+            SkillUp Academy · Learn from anywhere
+          </p>
+
+          <h1>
+            Explore top courses
+          </h1>
+
         </div>
-        <div class="nav-label">Explore</div>
-        <a class="active"
-          ><span class="nav-icon">⌕</span><span>Explore Courses</span></a
-        ><a><span class="nav-icon">▣</span><span>My Learning</span></a
-        ><a><span class="nav-icon">♡</span><span>Wishlist</span></a
-        ><a><span class="nav-icon">🏆</span><span>Certificates</span></a
-        ><a><span class="nav-icon">♟</span><span>Instructors</span></a>
-        <div class="nav-label">Account</div>
-        <a><span class="nav-icon">⚙</span><span>Settings</span></a
-        ><a href="../../index.html"
-          ><span class="nav-icon">←</span><span>All Apps</span></a
-        >
-      </aside>
-      <main class="main">
-        <header class="top">
+
+
+        <div class="profile">
+
+          <div class="avatar">
+            AN
+          </div>
+
+          <b>
+            My Account
+          </b>
+
+        </div>
+
+      </header>
+
+
+
+      <!-- ================= HERO ================= -->
+
+      <section class="hero-card">
+
+        <div class="row">
+
           <div>
-            <p class="eyebrow">SkillUp Academy · Learn from anywhere</p>
-            <h1>Explore top courses</h1>
-          </div>
-          <div class="profile">
-            <div class="avatar">AN</div>
-            <b>My Account</b>
-          </div>
-        </header>
-        <section class="hero-card">
-          <div class="row">
-            <div>
-              <span class="pill" style="background: #ffffff22; color: #fff"
-                >CURATED FOR YOU</span
-              >
-              <h2>Build skills that move you forward</h2>
-              <p>
-                Learn from industry experts with practical, career-focused
-                courses.
-              </p>
-            </div>
-            <div style="font-size: 52px">🎓</div>
-          </div>
-          <div class="search" style="margin-top: 18px">
-            <input
-              id="search"
-              placeholder="Search courses, skills, instructors..."
-            /><button class="btn" onclick="filterCourses()">
-              Search Courses
-            </button>
-          </div>
-        </section>
-        <div class="row" style="margin: 22px 0 12px">
-          <div>
-            <h2 style="margin: 0">Popular categories</h2>
-            <p class="muted" style="margin: 5px 0">
-              Find the right path for your goals
+
+            <span
+              class="pill hero-pill"
+            >
+              CURATED FOR YOU
+            </span>
+
+
+            <h2>
+              Build skills that move you forward
+            </h2>
+
+
+            <p>
+              Learn from industry experts with practical,
+              career-focused courses.
             </p>
+
           </div>
+
+
+          <div class="hero-icon">
+            🎓
+          </div>
+
         </div>
-        <div class="chips" style="margin-bottom: 18px">
-          <button class="chip active" onclick="setCat('All', this)">
-            All Courses</button
-          ><button class="chip" onclick="setCat('Development', this)">
-            Development</button
-          ><button class="chip" onclick="setCat('Design', this)">Design</button
-          ><button class="chip" onclick="setCat('Business', this)">
-            Business</button
-          ><button class="chip" onclick="setCat('Data', this)">
-            Data Science
-          </button>
-        </div>
-        <section class="grid three" id="courses">
-          <article
-            class="card course course-card"
-            data-cat="Development"
-            data-name="web development"
+
+
+        <div
+          class="search"
+          style="margin-top:18px"
+        >
+
+          <input
+            id="search"
+            type="text"
+            placeholder="Search courses, skills, instructors..."
+            autocomplete="off"
           >
-            <div class="course-banner"></div>
-            <span class="pill">Development</span>
-            <h3>Modern Web Development</h3>
-            <p class="muted">HTML · CSS · JavaScript · 24 hours</p>
-            <p>⭐ <b>4.9</b> · 12k learners</p>
-            <div class="row">
-              <div>
-                <b>₹799</b><br /><small class="muted"
-                  >Certificate included</small
-                >
-              </div>
-              <button class="btn" onclick="enroll('Modern Web Development')">
+
+
+          <button
+            class="btn"
+            onclick="filterCourses()"
+          >
+            Search Courses
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= CATEGORIES ================= -->
+
+      <div
+        class="row"
+        style="margin:22px 0 12px"
+      >
+
+        <div>
+
+          <h2 style="margin:0">
+            Popular categories
+          </h2>
+
+          <p
+            class="muted"
+            style="margin:5px 0"
+          >
+            Find the right path for your goals
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="chips"
+        style="margin-bottom:18px"
+      >
+
+        <button
+          class="chip active"
+          onclick="setCat('All', this)"
+        >
+          All Courses
+        </button>
+
+
+        <button
+          class="chip"
+          onclick="setCat('Development', this)"
+        >
+          Development
+        </button>
+
+
+        <button
+          class="chip"
+          onclick="setCat('Design', this)"
+        >
+          Design
+        </button>
+
+
+        <button
+          class="chip"
+          onclick="setCat('Business', this)"
+        >
+          Business
+        </button>
+
+
+        <button
+          class="chip"
+          onclick="setCat('Data', this)"
+        >
+          Data Science
+        </button>
+
+      </div>
+
+
+
+      <!-- ================= COURSE CARDS ================= -->
+
+      <section
+        class="grid three"
+        id="courses"
+      >
+
+
+        <!-- COURSE 1 -->
+
+        <article
+          class="card course course-card"
+          data-cat="Development"
+          data-name="modern web development html css javascript"
+          data-course="Modern Web Development"
+        >
+
+          <div class="course-banner"></div>
+
+
+          <span class="pill">
+            Development
+          </span>
+
+
+          <h3>
+            Modern Web Development
+          </h3>
+
+
+          <p class="muted">
+            HTML · CSS · JavaScript · 24 hours
+          </p>
+
+
+          <p>
+            ⭐ <b>4.9</b> · 12k learners
+          </p>
+
+
+          <div class="row">
+
+            <div>
+
+              <b>
+                ₹799
+              </b>
+
+              <br>
+
+              <small class="muted">
+                Certificate included
+              </small>
+
+            </div>
+
+
+            <div class="course-actions">
+
+              <button
+                class="wishlist-btn"
+                onclick="toggleWishlist(this, 'Modern Web Development')"
+              >
+                ♡
+              </button>
+
+
+              <button
+                class="btn"
+                onclick="enroll('Modern Web Development')"
+              >
                 Enroll
               </button>
+
             </div>
-          </article>
-          <article
-            class="card course course-card"
-            data-cat="Development"
-            data-name="java programming"
-          >
-            <div class="course-banner two-tone"></div>
-            <span class="pill">Development</span>
-            <h3>Java Programming Masterclass</h3>
-            <p class="muted">Java · OOP · DSA · 32 hours</p>
-            <p>⭐ <b>4.8</b> · 8.4k learners</p>
-            <div class="row">
-              <div>
-                <b>₹999</b><br /><small class="muted"
-                  >Certificate included</small
-                >
-              </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- COURSE 2 -->
+
+        <article
+          class="card course course-card"
+          data-cat="Development"
+          data-name="java programming masterclass java oop dsa"
+          data-course="Java Programming Masterclass"
+        >
+
+          <div class="course-banner two-tone"></div>
+
+
+          <span class="pill">
+            Development
+          </span>
+
+
+          <h3>
+            Java Programming Masterclass
+          </h3>
+
+
+          <p class="muted">
+            Java · OOP · DSA · 32 hours
+          </p>
+
+
+          <p>
+            ⭐ <b>4.8</b> · 8.4k learners
+          </p>
+
+
+          <div class="row">
+
+            <div>
+
+              <b>
+                ₹999
+              </b>
+
+              <br>
+
+              <small class="muted">
+                Certificate included
+              </small>
+
+            </div>
+
+
+            <div class="course-actions">
+
+              <button
+                class="wishlist-btn"
+                onclick="toggleWishlist(this, 'Java Programming Masterclass')"
+              >
+                ♡
+              </button>
+
+
               <button
                 class="btn"
                 onclick="enroll('Java Programming Masterclass')"
               >
                 Enroll
               </button>
+
             </div>
-          </article>
-          <article
-            class="card course course-card"
-            data-cat="Design"
-            data-name="ui ux design"
-          >
-            <div class="course-banner pink"></div>
-            <span class="pill">Design</span>
-            <h3>UI/UX Design Essentials</h3>
-            <p class="muted">Figma · UX · Prototyping · 18 hours</p>
-            <p>⭐ <b>4.9</b> · 6.1k learners</p>
-            <div class="row">
-              <div>
-                <b>₹699</b><br /><small class="muted"
-                  >Certificate included</small
-                >
-              </div>
-              <button class="btn" onclick="enroll('UI/UX Design Essentials')">
+
+          </div>
+
+        </article>
+
+
+
+        <!-- COURSE 3 -->
+
+        <article
+          class="card course course-card"
+          data-cat="Design"
+          data-name="ui ux design figma ux prototyping"
+          data-course="UI/UX Design Essentials"
+        >
+
+          <div class="course-banner pink"></div>
+
+
+          <span class="pill">
+            Design
+          </span>
+
+
+          <h3>
+            UI/UX Design Essentials
+          </h3>
+
+
+          <p class="muted">
+            Figma · UX · Prototyping · 18 hours
+          </p>
+
+
+          <p>
+            ⭐ <b>4.9</b> · 6.1k learners
+          </p>
+
+
+          <div class="row">
+
+            <div>
+
+              <b>
+                ₹699
+              </b>
+
+              <br>
+
+              <small class="muted">
+                Certificate included
+              </small>
+
+            </div>
+
+
+            <div class="course-actions">
+
+              <button
+                class="wishlist-btn"
+                onclick="toggleWishlist(this, 'UI/UX Design Essentials')"
+              >
+                ♡
+              </button>
+
+
+              <button
+                class="btn"
+                onclick="enroll('UI/UX Design Essentials')"
+              >
                 Enroll
               </button>
+
             </div>
-          </article>
-          <article
-            class="card course course-card"
-            data-cat="Business"
-            data-name="digital marketing"
-          >
-            <div class="course-banner orange"></div>
-            <span class="pill">Business</span>
-            <h3>Digital Marketing Strategy</h3>
-            <p class="muted">SEO · Ads · Analytics · 20 hours</p>
-            <p>⭐ <b>4.7</b> · 5.8k learners</p>
-            <div class="row">
-              <div>
-                <b>₹899</b><br /><small class="muted"
-                  >Certificate included</small
-                >
-              </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- COURSE 4 -->
+
+        <article
+          class="card course course-card"
+          data-cat="Business"
+          data-name="digital marketing strategy seo ads analytics"
+          data-course="Digital Marketing Strategy"
+        >
+
+          <div class="course-banner orange"></div>
+
+
+          <span class="pill">
+            Business
+          </span>
+
+
+          <h3>
+            Digital Marketing Strategy
+          </h3>
+
+
+          <p class="muted">
+            SEO · Ads · Analytics · 20 hours
+          </p>
+
+
+          <p>
+            ⭐ <b>4.7</b> · 5.8k learners
+          </p>
+
+
+          <div class="row">
+
+            <div>
+
+              <b>
+                ₹899
+              </b>
+
+              <br>
+
+              <small class="muted">
+                Certificate included
+              </small>
+
+            </div>
+
+
+            <div class="course-actions">
+
+              <button
+                class="wishlist-btn"
+                onclick="toggleWishlist(this, 'Digital Marketing Strategy')"
+              >
+                ♡
+              </button>
+
+
               <button
                 class="btn"
                 onclick="enroll('Digital Marketing Strategy')"
               >
                 Enroll
               </button>
+
             </div>
-          </article>
-          <article
-            class="card course course-card"
-            data-cat="Data"
-            data-name="python data science"
-          >
-            <div class="course-banner two-tone"></div>
-            <span class="pill">Data Science</span>
-            <h3>Python for Data Science</h3>
-            <p class="muted">Python · NumPy · Pandas · 28 hours</p>
-            <p>⭐ <b>4.9</b> · 15k learners</p>
-            <div class="row">
-              <div>
-                <b>₹1,099</b><br /><small class="muted"
-                  >Certificate included</small
-                >
-              </div>
-              <button class="btn" onclick="enroll('Python for Data Science')">
-                Enroll
-              </button>
-            </div>
-          </article>
-          <article
-            class="card course course-card"
-            data-cat="Design"
-            data-name="graphic design"
-          >
-            <div class="course-banner pink"></div>
-            <span class="pill">Design</span>
-            <h3>Graphic Design Bootcamp</h3>
-            <p class="muted">Typography · Branding · 16 hours</p>
-            <p>⭐ <b>4.8</b> · 4.2k learners</p>
-            <div class="row">
-              <div>
-                <b>₹749</b><br /><small class="muted"
-                  >Certificate included</small
-                >
-              </div>
-              <button class="btn" onclick="enroll('Graphic Design Bootcamp')">
-                Enroll
-              </button>
-            </div>
-          </article>
-        </section>
-        <div id="empty" class="empty">
-          No courses found. Try another category or search term.
-        </div>
-        <section class="panel" style="margin-top: 22px">
+
+          </div>
+
+        </article>
+
+
+
+        <!-- COURSE 5 -->
+
+        <article
+          class="card course course-card"
+          data-cat="Data"
+          data-name="python data science numpy pandas python"
+          data-course="Python for Data Science"
+        >
+
+          <div class="course-banner two-tone"></div>
+
+
+          <span class="pill">
+            Data Science
+          </span>
+
+
+          <h3>
+            Python for Data Science
+          </h3>
+
+
+          <p class="muted">
+            Python · NumPy · Pandas · 28 hours
+          </p>
+
+
+          <p>
+            ⭐ <b>4.9</b> · 15k learners
+          </p>
+
+
           <div class="row">
+
             <div>
-              <h2>Why learn with SkillUp?</h2>
+
+              <b>
+                ₹1,099
+              </b>
+
+              <br>
+
+              <small class="muted">
+                Certificate included
+              </small>
+
+            </div>
+
+
+            <div class="course-actions">
+
+              <button
+                class="wishlist-btn"
+                onclick="toggleWishlist(this, 'Python for Data Science')"
+              >
+                ♡
+              </button>
+
+
+              <button
+                class="btn"
+                onclick="enroll('Python for Data Science')"
+              >
+                Enroll
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- COURSE 6 -->
+
+        <article
+          class="card course course-card"
+          data-cat="Design"
+          data-name="graphic design typography branding"
+          data-course="Graphic Design Bootcamp"
+        >
+
+          <div class="course-banner pink"></div>
+
+
+          <span class="pill">
+            Design
+          </span>
+
+
+          <h3>
+            Graphic Design Bootcamp
+          </h3>
+
+
+          <p class="muted">
+            Typography · Branding · 16 hours
+          </p>
+
+
+          <p>
+            ⭐ <b>4.8</b> · 4.2k learners
+          </p>
+
+
+          <div class="row">
+
+            <div>
+
+              <b>
+                ₹749
+              </b>
+
+              <br>
+
+              <small class="muted">
+                Certificate included
+              </small>
+
+            </div>
+
+
+            <div class="course-actions">
+
+              <button
+                class="wishlist-btn"
+                onclick="toggleWishlist(this, 'Graphic Design Bootcamp')"
+              >
+                ♡
+              </button>
+
+
+              <button
+                class="btn"
+                onclick="enroll('Graphic Design Bootcamp')"
+              >
+                Enroll
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+
+      <!-- EMPTY SEARCH -->
+
+      <div
+        id="empty"
+        class="empty"
+      >
+        No courses found.
+        Try another category or search term.
+      </div>
+
+
+
+      <!-- ================= MY LEARNING ================= -->
+
+      <section
+        class="panel"
+        id="learning"
+        style="margin-top:22px"
+      >
+
+        <div class="row">
+
+          <div>
+
+            <h2>
+              My Learning
+            </h2>
+
+            <p class="muted">
+              Courses you have enrolled in
+            </p>
+
+          </div>
+
+
+          <span
+            class="pill"
+            id="enrolledCount"
+          >
+            0 COURSES
+          </span>
+
+        </div>
+
+
+        <div
+          id="learningList"
+          class="learning-list"
+        >
+
+          <p class="muted">
+            You haven't enrolled in any courses yet.
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= WISHLIST ================= -->
+
+      <section
+        class="panel"
+        id="wishlist"
+        style="margin-top:22px"
+      >
+
+        <div class="row">
+
+          <div>
+
+            <h2>
+              Wishlist
+            </h2>
+
+            <p class="muted">
+              Courses you want to learn later
+            </p>
+
+          </div>
+
+
+          <span
+            class="pill"
+            id="wishlistCount"
+          >
+            0 SAVED
+          </span>
+
+        </div>
+
+
+        <div
+          id="wishlistList"
+          class="learning-list"
+        >
+
+          <p class="muted">
+            Your wishlist is empty.
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= CERTIFICATES ================= -->
+
+      <section
+        class="panel"
+        id="certificates"
+        style="margin-top:22px"
+      >
+
+        <div class="row">
+
+          <div>
+
+            <h2>
+              Certificates
+            </h2>
+
+            <p class="muted">
+              Certificates earned after completing courses
+            </p>
+
+          </div>
+
+
+          <button
+            class="btn light"
+            onclick="showCertificates()"
+          >
+            View Certificates
+          </button>
+
+        </div>
+
+
+        <div
+          id="certificateList"
+          class="certificate-grid"
+        >
+
+          <div class="certificate">
+
+            <span>
+              🏆
+            </span>
+
+            <div>
+
+              <b>
+                Web Development Fundamentals
+              </b>
+
               <p class="muted">
-                Everything you need to learn, practice and prove your skills.
+                Certificate · SkillUp Academy
               </p>
+
             </div>
+
           </div>
-          <div class="feature-grid">
-            <div class="feature">
-              <b>🎯 Project-based</b>
-              <p class="muted">Build practical portfolio projects.</p>
+
+
+          <div class="certificate">
+
+            <span>
+              🏆
+            </span>
+
+            <div>
+
+              <b>
+                Python Basics
+              </b>
+
+              <p class="muted">
+                Certificate · SkillUp Academy
+              </p>
+
             </div>
-            <div class="feature">
-              <b>👨‍🏫 Expert instructors</b>
-              <p class="muted">Learn from experienced professionals.</p>
-            </div>
-            <div class="feature">
-              <b>🏆 Certificates</b>
-              <p class="muted">Earn certificates after completion.</p>
-            </div>
+
           </div>
-        </section>
-      </main>
-    </div>
-    <div id="toast" class="toast"></div>
-    <script src="script.js"></script>
-  </body>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= INSTRUCTORS ================= -->
+
+      <section
+        class="panel"
+        id="instructors"
+        style="margin-top:22px"
+      >
+
+        <div>
+
+          <h2>
+            Expert Instructors
+          </h2>
+
+          <p class="muted">
+            Learn from experienced professionals.
+          </p>
+
+        </div>
+
+
+        <div class="instructor-grid">
+
+          <div class="instructor">
+
+            <div class="avatar">
+              AR
+            </div>
+
+            <div>
+
+              <b>
+                Ananya Rao
+              </b>
+
+              <p class="muted">
+                Web Development · 10+ years
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="instructor">
+
+            <div class="avatar">
+              VK
+            </div>
+
+            <div>
+
+              <b>
+                Vikram Kumar
+              </b>
+
+              <p class="muted">
+                Java & DSA · 12+ years
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="instructor">
+
+            <div class="avatar">
+              PS
+            </div>
+
+            <div>
+
+              <b>
+                Priya Shah
+              </b>
+
+              <p class="muted">
+                Data Science · 9+ years
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= WHY SKILLUP ================= -->
+
+      <section
+        class="panel"
+        style="margin-top:22px"
+      >
+
+        <div>
+
+          <h2>
+            Why learn with SkillUp?
+          </h2>
+
+          <p class="muted">
+            Everything you need to learn, practice and prove your skills.
+          </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+          <div class="feature">
+
+            <b>
+              🎯 Project-based
+            </b>
+
+            <p class="muted">
+              Build practical portfolio projects.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <b>
+              👨‍🏫 Expert instructors
+            </b>
+
+            <p class="muted">
+              Learn from experienced professionals.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <b>
+              🏆 Certificates
+            </b>
+
+            <p class="muted">
+              Earn certificates after completion.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <p class="footer-note">
+        SkillUp demo interface · Sample course data for UI demonstration.
+      </p>
+
+    </main>
+
+  </div>
+
+
+
+  <!-- TOAST -->
+
+  <div
+    id="toast"
+    class="toast"
+  ></div>
+
+
+  <script src="script.js"></script>
+
+</body>
+
 </html>

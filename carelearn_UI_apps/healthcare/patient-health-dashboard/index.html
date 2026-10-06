@@ -1,200 +1,517 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Patient Health Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../../dashboard-polish.css" />
-  </head>
-  <body>
-    <div class="app">
-      <aside class="side">
-        <div class="brand">
-          <span class="brand-mark">♥</span><span>CarePlus</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Patient Health Dashboard</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../../dashboard-polish.css" />
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="side">
+
+      <div class="brand">
+        <span class="brand-mark">♥</span>
+        <span>CarePlus</span>
+      </div>
+
+      <div class="nav-label">Main</div>
+
+      <a href="#" class="active"
+        onclick="selectMenu(this, 'Dashboard'); return false;">
+        <span class="nav-icon">⌂</span>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="#"
+        onclick="selectMenu(this, 'Appointments'); return false;">
+        <span class="nav-icon">◷</span>
+        <span>Appointments</span>
+      </a>
+
+      <a href="#"
+        onclick="selectMenu(this, 'Medications'); return false;">
+        <span class="nav-icon">✚</span>
+        <span>Medications</span>
+      </a>
+
+      <a href="#"
+        onclick="selectMenu(this, 'Medical Records'); return false;">
+        <span class="nav-icon">▣</span>
+        <span>Medical Records</span>
+      </a>
+
+      <a href="#"
+        onclick="selectMenu(this, 'Messages'); return false;">
+        <span class="nav-icon">✉</span>
+        <span>Messages</span>
+      </a>
+
+      <div class="nav-label">Account</div>
+
+      <a href="#"
+        onclick="selectMenu(this, 'Settings'); return false;">
+        <span class="nav-icon">⚙</span>
+        <span>Settings</span>
+      </a>
+
+      <a href="../../index.html">
+        <span class="nav-icon">←</span>
+        <span>All Apps</span>
+      </a>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+      <!-- HEADER -->
+
+      <header class="top">
+
+        <div>
+
+          <p class="eyebrow">
+            Wednesday, October 2, 2026 · Health overview
+          </p>
+
+          <h1>
+            Good evening, Alex 👋
+          </h1>
+
         </div>
-        <div class="nav-label">Main</div>
-        <a class="active"
-          ><span class="nav-icon">⌂</span><span>Dashboard</span></a
-        ><a><span class="nav-icon">◷</span><span>Appointments</span></a
-        ><a><span class="nav-icon">✚</span><span>Medications</span></a
-        ><a><span class="nav-icon">▣</span><span>Medical Records</span></a
-        ><a><span class="nav-icon">✉</span><span>Messages</span></a>
-        <div class="nav-label">Account</div>
-        <a><span class="nav-icon">⚙</span><span>Settings</span></a
-        ><a href="../../index.html"
-          ><span class="nav-icon">←</span><span>All Apps</span></a
-        >
-      </aside>
-      <main class="main">
-        <header class="top">
+
+        <div class="profile">
+
+          <div class="avatar">
+            AS
+          </div>
+
+          <b>
+            Alex Smith
+          </b>
+
+        </div>
+
+      </header>
+
+
+      <!-- ================= HEALTH SCORE ================= -->
+
+      <section class="hero-card" style="margin-bottom: 20px">
+
+        <div class="row">
+
           <div>
-            <p class="eyebrow">Wednesday, October 2, 2026 · Health overview</p>
-            <h1>Good evening, Alex 👋</h1>
+
+            <span
+              class="pill"
+              style="background: #ffffff22; color: #fff"
+            >
+              HEALTH SCORE
+            </span>
+
+            <h2>
+              You're doing great today
+            </h2>
+
+            <p>
+              Your overall health score is
+              <b>92/100</b>.
+              Keep your activity and medication routine consistent.
+            </p>
+
           </div>
-          <div class="profile">
-            <div class="avatar">AS</div>
-            <b>Alex Smith</b>
+
+          <div style="font-size: 48px; font-weight: 900">
+            92
           </div>
-        </header>
-        <section class="hero-card" style="margin-bottom: 20px">
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= HEALTH STATISTICS ================= -->
+
+      <section class="grid stats">
+
+        <div class="stat">
+
+          <small>
+            Heart Rate
+          </small>
+
+          <strong>
+            72 BPM
+          </strong>
+
+          <span class="trend good">
+            ● Normal · -2% this week
+          </span>
+
+        </div>
+
+
+        <div class="stat">
+
+          <small>
+            Blood Pressure
+          </small>
+
+          <strong>
+            118/76
+          </strong>
+
+          <span class="trend good">
+            ● Healthy range
+          </span>
+
+        </div>
+
+
+        <div class="stat">
+
+          <small>
+            Blood Oxygen
+          </small>
+
+          <strong>
+            98%
+          </strong>
+
+          <span class="trend good">
+            ● Excellent
+          </span>
+
+        </div>
+
+
+        <div class="stat">
+
+          <small>
+            Temperature
+          </small>
+
+          <strong>
+            36.6°C
+          </strong>
+
+          <span class="trend good">
+            ● Normal
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= ACTIVITY + APPOINTMENT ================= -->
+
+      <section class="grid two">
+
+
+        <!-- WEEKLY ACTIVITY -->
+
+        <div class="panel">
+
           <div class="row">
+
             <div>
-              <span class="pill" style="background: #ffffff22; color: #fff"
-                >HEALTH SCORE</span
-              >
-              <h2>You're doing great today</h2>
-              <p>
-                Your overall health score is <b>92/100</b>. Keep your activity
-                and medication routine consistent.
+
+              <h2>
+                Weekly Health Activity
+              </h2>
+
+              <p class="muted">
+                Heart rate trend · Last 7 days
               </p>
+
             </div>
-            <div style="font-size: 48px; font-weight: 900">92</div>
+
+            <button
+              class="btn light"
+              onclick="viewHealthReport()"
+            >
+              View Report
+            </button>
+
           </div>
-        </section>
-        <section class="grid stats">
-          <div class="stat">
-            <small>Heart Rate</small><strong>72 BPM</strong
-            ><span class="trend good">● Normal · -2% this week</span>
+
+
+          <div class="mini-chart">
+
+            <span style="height:55%"></span>
+            <span style="height:68%"></span>
+            <span style="height:48%"></span>
+            <span style="height:80%"></span>
+            <span style="height:62%"></span>
+            <span style="height:74%"></span>
+            <span style="height:58%"></span>
+
           </div>
-          <div class="stat">
-            <small>Blood Pressure</small><strong>118/76</strong
-            ><span class="trend good">● Healthy range</span>
+
+
+          <div class="row">
+
+            <small class="muted">Mon</small>
+            <small class="muted">Tue</small>
+            <small class="muted">Wed</small>
+            <small class="muted">Thu</small>
+            <small class="muted">Fri</small>
+            <small class="muted">Sat</small>
+            <small class="muted">Sun</small>
+
           </div>
-          <div class="stat">
-            <small>Blood Oxygen</small><strong>98%</strong
-            ><span class="trend good">● Excellent</span>
+
+        </div>
+
+
+        <!-- NEXT APPOINTMENT -->
+
+        <div class="panel">
+
+          <div class="row">
+
+            <h2>
+              Next Appointment
+            </h2>
+
+            <button
+              class="btn light"
+              onclick="viewAppointment()"
+            >
+              View
+            </button>
+
           </div>
-          <div class="stat">
-            <small>Temperature</small><strong>36.6°C</strong
-            ><span class="trend good">● Normal</span>
-          </div>
-        </section>
-        <section class="grid two">
-          <div class="panel">
+
+
+          <div class="item">
+
             <div class="row">
+
               <div>
-                <h2>Weekly Health Activity</h2>
-                <p class="muted">Heart rate trend · Last 7 days</p>
+
+                <b>
+                  Dr. Priya Menon
+                </b>
+
+                <p class="muted">
+                  Cardiology Specialist
+                </p>
+
               </div>
-              <button
-                class="btn light"
-                onclick="notify('Health report opened')"
-              >
-                View Report
-              </button>
+
+              <div class="avatar">
+                PM
+              </div>
+
             </div>
-            <div class="mini-chart">
-              <span style="height: 55%"></span><span style="height: 68%"></span
-              ><span style="height: 48%"></span><span style="height: 80%"></span
-              ><span style="height: 62%"></span><span style="height: 74%"></span
-              ><span style="height: 58%"></span>
-            </div>
-            <div class="row">
-              <small class="muted">Mon</small><small class="muted">Tue</small
-              ><small class="muted">Wed</small><small class="muted">Thu</small
-              ><small class="muted">Fri</small><small class="muted">Sat</small
-              ><small class="muted">Sun</small>
-            </div>
+
+
+            <p>
+              📅 Oct 08, 2026 · 10:30 AM
+            </p>
+
+            <p class="muted">
+              Video consultation · 30 min
+            </p>
+
+
+            <button
+              class="btn"
+              onclick="setReminder()"
+            >
+              Set Reminder
+            </button>
+
           </div>
-          <div class="panel">
-            <div class="row">
-              <h2>Next Appointment</h2>
-              <button
-                class="btn light"
-                onclick="notify('Appointment details opened')"
-              >
-                View
-              </button>
-            </div>
-            <div class="item">
-              <div class="row">
-                <div>
-                  <b>Dr. Priya Menon</b>
-                  <p class="muted">Cardiology Specialist</p>
-                </div>
-                <div class="avatar">PM</div>
-              </div>
-              <p>📅 Oct 08, 2026 · 10:30 AM</p>
-              <p class="muted">Video consultation · 30 min</p>
-              <button class="btn" onclick="notify('Reminder set for Oct 08')">
-                Set Reminder
-              </button>
-            </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= MEDICATIONS + RECORDS ================= -->
+
+      <section
+        class="grid two"
+        style="margin-top:20px"
+      >
+
+
+        <!-- MEDICATIONS -->
+
+        <div class="panel">
+
+          <div class="row">
+
+            <h2>
+              Medications
+            </h2>
+
+            <button
+              class="btn light"
+              onclick="viewMedications()"
+            >
+              View all
+            </button>
+
           </div>
-        </section>
-        <section class="grid two" style="margin-top: 20px">
-          <div class="panel">
-            <div class="row">
-              <h2>Medications</h2>
-              <button
-                class="btn light"
-                onclick="notify('Medication list opened')"
-              >
-                View all
-              </button>
+
+
+          <div class="list">
+
+            <div class="item row">
+
+              <div>
+
+                <b>
+                  Vitamin D3
+                </b>
+
+                <p class="muted">
+                  1 tablet · Morning · 08:00 AM
+                </p>
+
+              </div>
+
+              <span class="good">
+                ✓ Taken
+              </span>
+
             </div>
-            <div class="list">
-              <div class="item row">
-                <div>
-                  <b>Vitamin D3</b>
-                  <p class="muted">1 tablet · Morning · 08:00 AM</p>
-                </div>
-                <span class="good">✓ Taken</span>
+
+
+            <div class="item row">
+
+              <div>
+
+                <b>
+                  Metformin
+                </b>
+
+                <p class="muted">
+                  500 mg · After dinner · 08:00 PM
+                </p>
+
               </div>
-              <div class="item row">
-                <div>
-                  <b>Metformin</b>
-                  <p class="muted">500 mg · After dinner · 08:00 PM</p>
-                </div>
-                <span class="danger">Due soon</span>
-              </div>
-              <div class="item row">
-                <div>
-                  <b>Omega 3</b>
-                  <p class="muted">1 capsule · Lunch · 01:00 PM</p>
-                </div>
-                <span class="good">✓ Taken</span>
-              </div>
+
+              <span class="danger">
+                Due soon
+              </span>
+
             </div>
+
+
+            <div class="item row">
+
+              <div>
+
+                <b>
+                  Omega 3
+                </b>
+
+                <p class="muted">
+                  1 capsule · Lunch · 01:00 PM
+                </p>
+
+              </div>
+
+              <span class="good">
+                ✓ Taken
+              </span>
+
+            </div>
+
           </div>
-          <div class="panel">
-            <div class="row">
-              <h2>Recent Medical Records</h2>
-              <button class="btn light" onclick="notify('Records opened')">
-                All Records
-              </button>
-            </div>
-            <table class="table">
-              <tr>
-                <th>Date</th>
-                <th>Record</th>
-                <th>Status</th>
-              </tr>
-              <tr>
-                <td>Sep 24</td>
-                <td>Blood Test</td>
-                <td class="good">Normal</td>
-              </tr>
-              <tr>
-                <td>Sep 12</td>
-                <td>ECG Report</td>
-                <td class="good">Reviewed</td>
-              </tr>
-              <tr>
-                <td>Aug 30</td>
-                <td>Prescription</td>
-                <td>Active</td>
-              </tr>
-            </table>
+
+        </div>
+
+
+        <!-- MEDICAL RECORDS -->
+
+        <div class="panel">
+
+          <div class="row">
+
+            <h2>
+              Recent Medical Records
+            </h2>
+
+            <button
+              class="btn light"
+              onclick="viewRecords()"
+            >
+              All Records
+            </button>
+
           </div>
-        </section>
-        <p class="footer-note">
-          CarePlus demo interface · Sample data for UI demonstration only.
-        </p>
-      </main>
-    </div>
-    <div id="toast" class="toast"></div>
-    <script src="script.js"></script>
-  </body>
+
+
+          <table class="table">
+
+            <tr>
+              <th>Date</th>
+              <th>Record</th>
+              <th>Status</th>
+            </tr>
+
+            <tr>
+              <td>Sep 24</td>
+              <td>Blood Test</td>
+              <td class="good">Normal</td>
+            </tr>
+
+            <tr>
+              <td>Sep 12</td>
+              <td>ECG Report</td>
+              <td class="good">Reviewed</td>
+            </tr>
+
+            <tr>
+              <td>Aug 30</td>
+              <td>Prescription</td>
+              <td>Active</td>
+            </tr>
+
+          </table>
+
+        </div>
+
+      </section>
+
+
+      <p class="footer-note">
+        CarePlus demo interface · Sample data for UI demonstration only.
+      </p>
+
+    </main>
+
+  </div>
+
+
+  <!-- TOAST -->
+
+  <div id="toast" class="toast"></div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="script.js"></script>
+
+</body>
+
 </html>
