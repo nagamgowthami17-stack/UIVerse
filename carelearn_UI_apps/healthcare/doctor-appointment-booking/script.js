@@ -1,53 +1,107 @@
-let currentSpec = "All";
-function notify(msg) {
-  const t = document.getElementById("toast");
-  t.textContent = msg;
-  t.classList.add("show");
-  clearTimeout(window.toastTimer);
-  window.toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
-}
-function render() {
-  const q = document.getElementById("search").value.toLowerCase();
-  let shown = 0;
-  document.querySelectorAll(".doctor").forEach((c) => {
-    const ok =
-      (currentSpec === "All" || c.dataset.spec === currentSpec) &&
-      c.dataset.name.includes(q);
-    c.style.display = ok ? "block" : "none";
-    if (ok) shown++;
-  });
-  document.getElementById("empty").style.display = shown ? "none" : "block";
-}
-function filterDoctors() {
-  render();
-  notify("Doctor results updated");
-}
-function setSpec(s, b) {
-  currentSpec = s;
-  document
-    .querySelectorAll(".chip")
-    .forEach((x) => x.classList.remove("active"));
-  b.classList.add("active");
-  render();
-}
-function openBooking(name, spec) {
-  document.getElementById("doctorName").textContent = name + " · " + spec;
-  document.getElementById("date").value = "2026-10-08";
-  document.getElementById("modal").classList.add("show");
-}
-function closeBooking() {
-  document.getElementById("modal").classList.remove("show");
-}
-function confirmBooking() {
-  const date = document.getElementById("date").value;
-  const time = document.getElementById("time").value;
-  if (!date) {
-    notify("Please select a date");
-    return;
-  }
-  document.getElementById("upcomingDate").textContent =
-    date + " · " + time + " · Video consultation";
-  closeBooking();
-  notify("Appointment confirmed successfully ✓");
-}
-document.getElementById("search").addEventListener("input", render);
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Sidebar
+    document.querySelectorAll(".sidebar-link").forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            document.querySelectorAll(".sidebar-link")
+                .forEach(item => item.classList.remove("active"));
+
+            this.classList.add("active");
+
+            const target = document.querySelector(this.getAttribute("href"));
+
+            if (target) {
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+
+    // Doctor search
+    const searchInput = document.querySelector("#doctorSearch");
+
+    if (searchInput) {
+        searchInput.addEventListener("input", function () {
+
+            const searchText = this.value.toLowerCase();
+
+            document.querySelectorAll(".doctor-card").forEach(card => {
+
+                const doctorName =
+                    card.textContent.toLowerCase();
+
+                card.style.display =
+                    doctorName.includes(searchText) ? "" : "none";
+            });
+        });
+    }
+
+
+    // Appointment booking
+    document.querySelectorAll(".book-btn").forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const doctorCard =
+                this.closest(".doctor-card");
+
+            const doctorName =
+                doctorCard
+                    ? doctorCard.querySelector(".doctor-name")?.textContent
+                    : "Doctor";
+
+            const date = prompt("Enter appointment date:");
+
+            if (!date) {
+                return;
+            }
+
+            const time = prompt("Enter appointment time:");
+
+            if (!time) {
+                return;
+            }
+
+            this.textContent = "Booked ✓";
+            this.disabled = true;
+
+            alert(
+                "Appointment booked successfully!\n\n" +
+                "Doctor: " + doctorName +
+                "\nDate: " + date +
+                "\nTime: " + time
+            );
+        });
+    });
+
+
+    // Cancel appointment
+    document.querySelectorAll(".cancel-btn").forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const confirmed =
+                confirm("Cancel this appointment?");
+
+            if (confirmed) {
+                this.closest(".appointment-card")?.remove();
+
+                alert("Appointment cancelled.");
+            }
+        });
+    });
+
+
+    // Health records
+    document.querySelectorAll(".record-btn").forEach(button => {
+
+        button.addEventListener("click", () => {
+            alert("Health record opened.");
+        });
+    });
+
+});
