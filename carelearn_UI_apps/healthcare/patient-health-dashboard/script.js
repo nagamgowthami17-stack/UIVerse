@@ -1,93 +1,129 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Sidebar navigation
-    const sidebarLinks = document.querySelectorAll(".sidebar-link");
+// ==========================================
+// CarePlus - Patient Health Dashboard
+// ==========================================
 
-    sidebarLinks.forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
+function notify(message) {
+  const toast = document.getElementById("toast");
 
-            sidebarLinks.forEach(item => item.classList.remove("active"));
-            this.classList.add("active");
+  if (!toast) return;
 
-            const target = this.getAttribute("href");
+  toast.textContent = message;
+  toast.classList.add("show");
 
-            if (target && target.startsWith("#")) {
-                const section = document.querySelector(target);
+  clearTimeout(window.toastTimer);
 
-                if (section) {
-                    section.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-                }
-            }
-
-            showNotification(this.dataset.label || this.textContent.trim());
-        });
-    });
-
-    // Appointment buttons
-    const appointmentButtons =
-        document.querySelectorAll(".appointment-btn");
-
-    appointmentButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            showNotification("Appointment section opened");
-        });
-    });
-
-    // Medication buttons
-    const medicationButtons =
-        document.querySelectorAll(".medication-btn");
-
-    medicationButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            this.textContent = "Taken ✓";
-            this.disabled = true;
-            showNotification("Medication marked as taken");
-        });
-    });
-
-    // Search medical records
-    const searchInput = document.querySelector("#recordSearch");
-
-    if (searchInput) {
-        searchInput.addEventListener("input", function () {
-            const searchValue = this.value.toLowerCase();
-
-            document.querySelectorAll(".record-item").forEach(record => {
-                const text = record.textContent.toLowerCase();
-
-                record.style.display =
-                    text.includes(searchValue) ? "" : "none";
-            });
-        });
-    }
-
-    // Message button
-    const messageButton = document.querySelector("#messageDoctor");
-
-    if (messageButton) {
-        messageButton.addEventListener("click", () => {
-            showNotification("Message window opened");
-        });
-    }
-});
-
-
-function showNotification(message) {
-    let notification = document.querySelector(".notification");
-
-    if (!notification) {
-        notification = document.createElement("div");
-        notification.className = "notification";
-        document.body.appendChild(notification);
-    }
-
-    notification.textContent = message;
-    notification.classList.add("show");
-
-    setTimeout(() => {
-        notification.classList.remove("show");
-    }, 2000);
+  window.toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2200);
 }
+
+
+// ==========================================
+// HEALTH REPORT
+// ==========================================
+
+function viewHealthReport() {
+  alert(
+    "HEALTH REPORT\n\n" +
+    "Health Score: 92/100\n" +
+    "Heart Rate: 72 BPM\n" +
+    "Blood Pressure: 118/76\n" +
+    "Blood Oxygen: 98%\n" +
+    "Temperature: 36.6°C\n\n" +
+    "Overall Status: Healthy"
+  );
+}
+
+
+// ==========================================
+// APPOINTMENT DETAILS
+// ==========================================
+
+function viewAppointment() {
+  alert(
+    "NEXT APPOINTMENT\n\n" +
+    "Doctor: Dr. Priya Menon\n" +
+    "Specialization: Cardiology Specialist\n" +
+    "Date: October 08, 2026\n" +
+    "Time: 10:30 AM\n" +
+    "Type: Video consultation\n" +
+    "Duration: 30 minutes"
+  );
+}
+
+
+// ==========================================
+// SET REMINDER
+// ==========================================
+
+function setReminder() {
+  const reminder = {
+    doctor: "Dr. Priya Menon",
+    date: "October 08, 2026",
+    time: "10:30 AM"
+  };
+
+  localStorage.setItem(
+    "careplusReminder",
+    JSON.stringify(reminder)
+  );
+
+  notify("Reminder set for Oct 08 ✓");
+}
+
+
+// ==========================================
+// MEDICATIONS
+// ==========================================
+
+function viewMedications() {
+  alert(
+    "MEDICATIONS\n\n" +
+    "✓ Vitamin D3\n" +
+    "   1 tablet · Morning · 08:00 AM\n\n" +
+    "• Metformin\n" +
+    "   500 mg · After dinner · 08:00 PM\n\n" +
+    "✓ Omega 3\n" +
+    "   1 capsule · Lunch · 01:00 PM"
+  );
+}
+
+
+// ==========================================
+// MEDICAL RECORDS
+// ==========================================
+
+function viewRecords() {
+  alert(
+    "MEDICAL RECORDS\n\n" +
+    "Sep 24 - Blood Test - Normal\n" +
+    "Sep 12 - ECG Report - Reviewed\n" +
+    "Aug 30 - Prescription - Active"
+  );
+}
+
+
+// ==========================================
+// SIDEBAR NAVIGATION
+// ==========================================
+
+document.querySelectorAll(".side a:not([href])").forEach((link) => {
+
+  link.addEventListener("click", function () {
+
+    document
+      .querySelectorAll(".side a")
+      .forEach((item) => {
+        item.classList.remove("active");
+      });
+
+    this.classList.add("active");
+
+    const sectionName =
+      this.querySelector("span:last-child")?.textContent.trim() ||
+      this.textContent.trim();
+
+    notify(sectionName + " selected");
+  });
+
+});
